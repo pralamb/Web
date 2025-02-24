@@ -73,7 +73,7 @@ const Home = () => {
             <Grid item xs={12} md={6}>
               <MotionBox
                 component="img"
-                src="/hero-image.jpg"
+                src="/Web-Ambiental/images/hero-image.jpg"
                 alt="Servicios ambientales"
                 sx={{
                   width: '100%',
