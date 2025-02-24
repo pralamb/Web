@@ -96,11 +96,11 @@ export const UI_TEXTS = {
 }
 
 export const COMPANY_INFO = {
-  name: 'EcoSolutions',
+  name: 'Pralamb',
   slogan: 'Soluciones ambientales para un futuro sostenible',
   description: 'Somos expertos en consultoría ambiental, ofreciendo soluciones integrales para empresas comprometidas con la sostenibilidad.',
   contact: {
-    email: 'contacto@ecosolutions.com',
+    email: 'contacto@pralamb.com',
     phone: '+34 900 123 456',
     address: 'Calle Principal 123, 28001 Madrid',
     schedule: {
@@ -109,9 +109,9 @@ export const COMPANY_INFO = {
     }
   },
   social: {
-    linkedin: 'https://linkedin.com/company/ecosolutions',
-    twitter: 'https://twitter.com/ecosolutions',
-    facebook: 'https://facebook.com/ecosolutions'
+    linkedin: 'https://linkedin.com/company/pralamb',
+    twitter: 'https://twitter.com/pralamb',
+    facebook: 'https://facebook.com/pralamb'
   }
 }
 

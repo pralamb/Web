@@ -2,16 +2,16 @@ import { createTheme } from '@mui/material/styles'
 
 export const theme = {
   colors: {
-    primary: '#2E7D32', // Verde oscuro para representar sostenibilidad
-    secondary: '#81C784', // Verde claro para acentos
-    accent: '#1565C0', // Azul para representar agua
-    background: '#F5F5F5',
-    text: '#333333',
+    primary: '#4A5D4B', // Verde oscuro del logo
+    secondary: '#A7B8A1', // Verde claro del logo
+    accent: '#8FA891', // Verde medio para acentos
+    background: '#F9F6F3', // Beige muy claro del fondo del logo
+    text: '#4A5D4B', // Mismo color que el primario para consistencia
     white: '#FFFFFF',
     gray: {
-      light: '#E0E0E0',
-      medium: '#9E9E9E',
-      dark: '#616161'
+      light: '#E8E6E3',
+      medium: '#B8B5B2',
+      dark: '#6B6967'
     }
   },
   typography: {
@@ -49,6 +49,7 @@ export const muiTheme = createTheme({
   palette: {
     primary: {
       main: theme.colors.primary,
+      light: theme.colors.secondary,
     },
     secondary: {
       main: theme.colors.secondary,
@@ -96,6 +97,14 @@ export const muiTheme = createTheme({
         root: {
           borderRadius: theme.borderRadius.lg,
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.colors.secondary,
+          color: theme.colors.text,
         },
       },
     },
