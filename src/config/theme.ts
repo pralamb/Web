@@ -1,3 +1,5 @@
+import { createTheme } from '@mui/material/styles'
+
 export const theme = {
   colors: {
     primary: '#2E7D32', // Verde oscuro para representar sostenibilidad
@@ -41,4 +43,61 @@ export const theme = {
     lg: '1rem',
     full: '9999px'
   }
-} 
+}
+
+export const muiTheme = createTheme({
+  palette: {
+    primary: {
+      main: theme.colors.primary,
+    },
+    secondary: {
+      main: theme.colors.secondary,
+    },
+    background: {
+      default: theme.colors.background,
+      paper: theme.colors.white,
+    },
+    text: {
+      primary: theme.colors.text,
+    },
+  },
+  typography: {
+    fontFamily: theme.typography.fontFamily.primary,
+    h1: {
+      fontFamily: theme.typography.fontFamily.secondary,
+    },
+    h2: {
+      fontFamily: theme.typography.fontFamily.secondary,
+    },
+    h3: {
+      fontFamily: theme.typography.fontFamily.secondary,
+    },
+    h4: {
+      fontFamily: theme.typography.fontFamily.secondary,
+    },
+    h5: {
+      fontFamily: theme.typography.fontFamily.secondary,
+    },
+    h6: {
+      fontFamily: theme.typography.fontFamily.secondary,
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          borderRadius: theme.borderRadius.md,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.borderRadius.lg,
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        },
+      },
+    },
+  },
+}) 

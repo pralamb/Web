@@ -1,7 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material'
-import { createTheme } from '@mui/material/styles'
-import { theme as themeConfig } from './config/theme'
+import { muiTheme } from './config/theme'
 import { ROUTES } from './config/constants'
 
 // Layouts
@@ -14,23 +13,9 @@ import Services from './pages/Services'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: themeConfig.colors.primary,
-    },
-    secondary: {
-      main: themeConfig.colors.secondary,
-    },
-  },
-  typography: {
-    fontFamily: themeConfig.typography.fontFamily.primary,
-  },
-})
-
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={muiTheme}>
       <Router>
         <Layout>
           <Routes>

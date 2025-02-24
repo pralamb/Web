@@ -19,6 +19,9 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,6 +38,12 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
 }
 
 /* Animaciones suaves */

@@ -1,46 +1,11 @@
 import { Box, Container, Grid, Typography, Card, CardContent, CardActions, Button } from '@mui/material'
 import { motion } from 'framer-motion'
 import { Link as RouterLink } from 'react-router-dom'
-import { SERVICES, ROUTES } from '../config/constants'
+import { SERVICES, ROUTES, UI_TEXTS } from '../config/constants'
 
 const MotionBox = motion(Box)
 
 const Services = () => {
-  const serviceDetails = {
-    'water-treatment': {
-      features: [
-        'Análisis y diagnóstico de sistemas de tratamiento',
-        'Diseño de plantas de tratamiento',
-        'Optimización de procesos',
-        'Monitoreo y control de calidad',
-      ],
-    },
-    'waste-management': {
-      features: [
-        'Gestión integral de residuos',
-        'Planes de minimización',
-        'Valorización de residuos',
-        'Cumplimiento normativo',
-      ],
-    },
-    'environmental-consulting': {
-      features: [
-        'Auditorías ambientales',
-        'Estudios de impacto ambiental',
-        'Sistemas de gestión ambiental',
-        'Asesoría legal ambiental',
-      ],
-    },
-    'energy-efficiency': {
-      features: [
-        'Auditorías energéticas',
-        'Optimización de consumo',
-        'Implementación de energías renovables',
-        'Certificación energética',
-      ],
-    },
-  }
-
   return (
     <Container maxWidth="lg">
       <MotionBox
@@ -50,10 +15,10 @@ const Services = () => {
         sx={{ mb: 6 }}
       >
         <Typography variant="h2" color="primary" gutterBottom>
-          Nuestros Servicios
+          {UI_TEXTS.sections.services.title}
         </Typography>
         <Typography variant="h5" color="text.secondary" paragraph>
-          Soluciones ambientales integrales para tu empresa
+          {UI_TEXTS.sections.services.subtitle}
         </Typography>
       </MotionBox>
 
@@ -74,10 +39,10 @@ const Services = () => {
                     {service.description}
                   </Typography>
                   <Typography variant="h6" gutterBottom color="primary" sx={{ mt: 2 }}>
-                    Características principales:
+                    {UI_TEXTS.sections.services.features.title}
                   </Typography>
                   <Box component="ul" sx={{ pl: 2 }}>
-                    {serviceDetails[service.id as keyof typeof serviceDetails].features.map((feature, i) => (
+                    {service.features.map((feature, i) => (
                       <Typography
                         component="li"
                         key={i}
@@ -98,7 +63,7 @@ const Services = () => {
                     to={ROUTES.CONTACT}
                     fullWidth
                   >
-                    Solicitar información
+                    {UI_TEXTS.buttons.contact}
                   </Button>
                 </CardActions>
               </Card>
@@ -121,10 +86,10 @@ const Services = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <Typography variant="h4" color="primary" gutterBottom>
-          ¿Necesitas una solución personalizada?
+          {UI_TEXTS.sections.services.cta.title}
         </Typography>
         <Typography variant="body1" color="text.secondary" paragraph>
-          Nuestro equipo de expertos está listo para ayudarte a encontrar la mejor solución para tu empresa.
+          {UI_TEXTS.sections.services.cta.description}
         </Typography>
         <Button
           variant="contained"
@@ -134,7 +99,7 @@ const Services = () => {
           to={ROUTES.CONTACT}
           sx={{ mt: 2 }}
         >
-          Contactar ahora
+          {UI_TEXTS.buttons.contact}
         </Button>
       </MotionBox>
     </Container>

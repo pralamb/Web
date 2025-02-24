@@ -13,49 +13,15 @@ import {
   TextField,
 } from '@mui/material'
 import { motion } from 'framer-motion'
+import { BLOG_POSTS, UI_TEXTS } from '../config/constants'
 
 const MotionBox = motion(Box)
 const MotionCard = motion(Card)
 
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Innovaciones en el Tratamiento de Aguas Residuales',
-    excerpt: 'Descubre las últimas tecnologías y métodos para el tratamiento eficiente de aguas residuales industriales.',
-    image: '/Web-Ambiental/images/blog/water-treatment.jpg',
-    category: 'Tratamiento de Aguas',
-    date: '2024-02-20',
-  },
-  {
-    id: 2,
-    title: 'Economía Circular en la Gestión de Residuos',
-    excerpt: 'Cómo implementar principios de economía circular para optimizar la gestión de residuos empresariales.',
-    image: '/Web-Ambiental/images/blog/circular-economy.jpg',
-    category: 'Gestión de Residuos',
-    date: '2024-02-15',
-  },
-  {
-    id: 3,
-    title: 'Certificaciones Ambientales para Empresas',
-    excerpt: 'Guía completa sobre las principales certificaciones ambientales y sus beneficios para tu empresa.',
-    image: '/Web-Ambiental/images/blog/certifications.jpg',
-    category: 'Gestión Ambiental',
-    date: '2024-02-10',
-  },
-  {
-    id: 4,
-    title: 'Energías Renovables en la Industria',
-    excerpt: 'Análisis de las diferentes opciones de energías renovables y su implementación en el sector industrial.',
-    image: '/Web-Ambiental/images/blog/renewable-energy.jpg',
-    category: 'Eficiencia Energética',
-    date: '2024-02-05',
-  },
-]
-
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('')
 
-  const filteredPosts = blogPosts.filter(
+  const filteredPosts = BLOG_POSTS.filter(
     (post) =>
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.category.toLowerCase().includes(searchTerm.toLowerCase())
@@ -71,17 +37,17 @@ const Blog = () => {
         sx={{ mb: 6 }}
       >
         <Typography variant="h2" color="primary" gutterBottom>
-          Blog y Novedades
+          {UI_TEXTS.sections.blog.title}
         </Typography>
         <Typography variant="h5" color="text.secondary" paragraph>
-          Mantente al día con las últimas noticias y tendencias en sostenibilidad ambiental
+          {UI_TEXTS.sections.blog.subtitle}
         </Typography>
 
         {/* Buscador */}
         <TextField
           fullWidth
           variant="outlined"
-          placeholder="Buscar artículos..."
+          placeholder={UI_TEXTS.sections.blog.search.placeholder}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           sx={{ mt: 2 }}
@@ -114,11 +80,10 @@ const Blog = () => {
                     sx={{ mr: 1 }}
                   />
                   <Typography variant="caption" color="text.secondary">
-                    {new Date(post.date).toLocaleDateString('es-ES', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
+                    {new Date(post.date).toLocaleDateString(
+                      UI_TEXTS.sections.blog.date.locale,
+                      UI_TEXTS.sections.blog.date.options
+                    )}
                   </Typography>
                 </Box>
                 <Typography variant="h5" component="h2" gutterBottom>
@@ -130,7 +95,7 @@ const Blog = () => {
               </CardContent>
               <CardActions sx={{ p: 2 }}>
                 <Button variant="outlined" color="primary" fullWidth>
-                  Leer más
+                  {UI_TEXTS.buttons.readMore}
                 </Button>
               </CardActions>
             </MotionCard>
@@ -142,7 +107,7 @@ const Blog = () => {
       {filteredPosts.length === 0 && (
         <Box sx={{ textAlign: 'center', my: 4 }}>
           <Typography variant="h6" color="text.secondary">
-            No se encontraron artículos que coincidan con tu búsqueda.
+            {UI_TEXTS.sections.blog.noResults}
           </Typography>
         </Box>
       )}

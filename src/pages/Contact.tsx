@@ -15,7 +15,7 @@ import { motion } from 'framer-motion'
 import EmailIcon from '@mui/icons-material/Email'
 import PhoneIcon from '@mui/icons-material/Phone'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
-import { COMPANY_INFO } from '../config/constants'
+import { COMPANY_INFO, UI_TEXTS } from '../config/constants'
 
 const MotionBox = motion(Box)
 
@@ -48,7 +48,7 @@ const Contact = () => {
     console.log('Formulario enviado:', formData)
     setSnackbar({
       open: true,
-      message: 'Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.',
+      message: UI_TEXTS.sections.contact.formSuccess,
       severity: 'success',
     })
     setFormData({
@@ -73,10 +73,10 @@ const Contact = () => {
         sx={{ mb: 6 }}
       >
         <Typography variant="h2" color="primary" gutterBottom>
-          Contacto
+          {UI_TEXTS.sections.contact.title}
         </Typography>
         <Typography variant="h5" color="text.secondary" paragraph>
-          Estamos aquí para ayudarte. Contáctanos y te responderemos lo antes posible.
+          {UI_TEXTS.sections.contact.subtitle}
         </Typography>
       </MotionBox>
 
@@ -90,7 +90,7 @@ const Contact = () => {
                   <TextField
                     required
                     fullWidth
-                    label="Nombre"
+                    label={UI_TEXTS.sections.contact.form.fields.name}
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -100,7 +100,7 @@ const Contact = () => {
                   <TextField
                     required
                     fullWidth
-                    label="Email"
+                    label={UI_TEXTS.sections.contact.form.fields.email}
                     name="email"
                     type="email"
                     value={formData.email}
@@ -110,7 +110,7 @@ const Contact = () => {
                 <Grid item xs={12} sm={6}>
                   <TextField
                     fullWidth
-                    label="Teléfono"
+                    label={UI_TEXTS.sections.contact.form.fields.phone}
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
@@ -119,7 +119,7 @@ const Contact = () => {
                 <Grid item xs={12} sm={6}>
                   <TextField
                     fullWidth
-                    label="Empresa"
+                    label={UI_TEXTS.sections.contact.form.fields.company}
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
@@ -131,7 +131,7 @@ const Contact = () => {
                     fullWidth
                     multiline
                     rows={4}
-                    label="Mensaje"
+                    label={UI_TEXTS.sections.contact.form.fields.message}
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
@@ -145,7 +145,7 @@ const Contact = () => {
                     size="large"
                     fullWidth
                   >
-                    Enviar mensaje
+                    {UI_TEXTS.buttons.sendMessage}
                   </Button>
                 </Grid>
               </Grid>
@@ -158,7 +158,7 @@ const Contact = () => {
           <Card>
             <CardContent>
               <Typography variant="h5" color="primary" gutterBottom>
-                Información de contacto
+                {UI_TEXTS.sections.contact.info.title}
               </Typography>
               
               <Box sx={{ mt: 3 }}>
@@ -183,11 +183,11 @@ const Contact = () => {
               </Box>
 
               <Typography variant="body1" sx={{ mt: 4 }}>
-                Horario de atención:
+                {UI_TEXTS.sections.contact.info.schedule.title}
                 <br />
-                Lunes a Viernes: 9:00 - 18:00
+                {UI_TEXTS.sections.contact.info.schedule.weekdays}
                 <br />
-                Sábados: 9:00 - 13:00
+                {UI_TEXTS.sections.contact.info.schedule.saturday}
               </Typography>
             </CardContent>
           </Card>
