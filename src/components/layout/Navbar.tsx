@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -10,44 +10,48 @@ import {
   Container,
   Button,
   MenuItem,
-} from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
-import { NAVIGATION, COMPANY_INFO } from '../../config/constants'
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { NAVIGATION, COMPANY_INFO } from "../../config/constants";
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget)
-  }
+    setAnchorElNav(event.currentTarget);
+  };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
-  }
+    setAnchorElNav(null);
+  };
 
   return (
     <AppBar position="static" color="transparent" elevation={0}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           {/* Logo - Desktop */}
-          <Typography
-            variant="h6"
-            noWrap
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              mr: 4,
+              height: "80px",
+            }}
             component={RouterLink}
             to="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontWeight: 700,
-              color: 'primary.main',
-              textDecoration: 'none',
-            }}
           >
-            {COMPANY_INFO.name}
-          </Typography>
+            <Box
+              component="img"
+              src="/logo.webp"
+              alt={COMPANY_INFO.name}
+              sx={{
+                height: "100%",
+                width: "auto",
+              }}
+            />
+          </Box>
 
           {/* Mobile menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="menu"
@@ -62,18 +66,18 @@ const Navbar = () => {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {NAVIGATION.map((item) => (
@@ -90,32 +94,43 @@ const Navbar = () => {
           </Box>
 
           {/* Logo - Mobile */}
-          <Typography
-            variant="h6"
-            noWrap
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "center",
+              height: "60px",
+            }}
             component={RouterLink}
             to="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontWeight: 700,
-              color: 'primary.main',
-              textDecoration: 'none',
-            }}
           >
-            {COMPANY_INFO.name}
-          </Typography>
+            <Box
+              component="img"
+              src="/logo.webp"
+              alt={COMPANY_INFO.name}
+              sx={{
+                height: "100%",
+                width: "auto",
+              }}
+            />
+          </Box>
 
           {/* Desktop menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+              gap: 2,
+            }}
+          >
             {NAVIGATION.map((item) => (
               <Button
                 key={item.path}
                 component={RouterLink}
                 to={item.path}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'text.primary', display: 'block' }}
+                sx={{ color: "text.primary" }}
               >
                 {item.name}
               </Button>
@@ -124,7 +139,7 @@ const Navbar = () => {
         </Toolbar>
       </Container>
     </AppBar>
-  )
-}
+  );
+};
 
-export default Navbar 
+export default Navbar;
