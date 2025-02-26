@@ -227,7 +227,8 @@ export const BLOG_POSTS = [
     title: "Innovaciones en el Tratamiento de Aguas Residuales",
     excerpt:
       "Descubre las últimas tecnologías y métodos para el tratamiento eficiente de aguas residuales industriales.",
-    image: "https://images.pexels.com/photos/1937657/pexels-photo-1937657.jpeg",
+    image:
+      "https://images.pexels.com/photos/15702931/pexels-photo-15702931/free-photo-of-hot-springs-and-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Tratamiento de Aguas",
     date: "2024-02-20",
   },
