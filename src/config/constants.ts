@@ -7,7 +7,8 @@ export const ROUTES = {
 };
 
 export const IMAGES = {
-  hero: "https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg",
+  hero: "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg",
+  leafPattern: "/leaf-pattern.png",
 };
 
 export const UI_TEXTS = {
@@ -16,8 +17,82 @@ export const UI_TEXTS = {
     ourServices: "Nuestros Servicios",
     readMore: "Leer más",
     sendMessage: "Enviar mensaje",
+    exploreService: "Explorar Servicio",
   },
   sections: {
+    hero: {
+      overline: "SOLUCIONES SOSTENIBLES",
+      title: {
+        part1: "Servicios",
+        part2: "Ambientales",
+        part3: "Integrales",
+      },
+      description:
+        "Comprometidos con el futuro de nuestro planeta, desarrollamos soluciones innovadoras para la conservación y gestión sostenible del medio ambiente.",
+    },
+    services: {
+      overline: "NUESTRAS SOLUCIONES",
+      title: "Servicios Ambientales",
+      description:
+        "Soluciones innovadoras y sostenibles para proteger nuestro planeta y construir un futuro más verde",
+    },
+    stats: {
+      items: [
+        {
+          value: 150,
+          suffix: "+",
+          label: "Proyectos Completados",
+          description: "Soluciones ambientales implementadas",
+        },
+        {
+          value: 1000,
+          suffix: "ha",
+          label: "Áreas Protegidas",
+          description: "Conservación y restauración",
+        },
+        {
+          value: 85,
+          suffix: "%",
+          label: "Eficiencia",
+          description: "En gestión de recursos hídricos",
+        },
+        {
+          value: 2500,
+          suffix: "ton",
+          label: "Residuos Gestionados",
+          description: "Anualmente de forma sostenible",
+        },
+      ],
+    },
+    benefits: {
+      overline: "NUESTRO COMPROMISO",
+      title: "Comprometidos con el Medio Ambiente",
+      description:
+        "Nuestro compromiso es crear un impacto positivo en el medio ambiente a través de soluciones innovadoras y sostenibles que beneficien tanto a la naturaleza como a la sociedad.",
+      items: [
+        {
+          title: "Conservación Ambiental",
+          description:
+            "Desarrollamos estrategias efectivas para la preservación de ecosistemas y recursos naturales.",
+          color: "#4CAF50",
+          gradient: "linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)",
+        },
+        {
+          title: "Gestión del Agua",
+          description:
+            "Implementamos soluciones innovadoras para el tratamiento y conservación del agua.",
+          color: "#2196F3",
+          gradient: "linear-gradient(135deg, #2196F3 0%, #1976D2 100%)",
+        },
+        {
+          title: "Economía Circular",
+          description:
+            "Promovemos prácticas sostenibles y la reutilización eficiente de recursos.",
+          color: "#8BC34A",
+          gradient: "linear-gradient(135deg, #8BC34A 0%, #7CB342 100%)",
+        },
+      ],
+    },
     about: {
       title: "Sobre Nosotros",
       description:
@@ -46,7 +121,7 @@ export const UI_TEXTS = {
         title: "Nuestro Equipo",
       },
     },
-    services: {
+    servicesPage: {
       title: "Nuestros Servicios",
       subtitle: "Soluciones integrales para tu empresa",
       features: {
@@ -99,6 +174,88 @@ export const UI_TEXTS = {
           message: "Mensaje",
         },
       },
+    },
+  },
+  navigation: {
+    brand: "PRALAMB",
+    items: [
+      { title: "Inicio", path: ROUTES.HOME },
+      { title: "Servicios", path: ROUTES.SERVICES },
+      { title: "Sobre Nosotros", path: ROUTES.ABOUT },
+      { title: "Contacto", path: ROUTES.CONTACT },
+    ],
+  },
+  footer: {
+    company: {
+      name: "PRALAMB",
+      description:
+        "Comprometidos con el medio ambiente y el desarrollo sostenible. Ofrecemos soluciones integrales para la gestión ambiental y la conservación de recursos naturales.",
+    },
+    quickLinks: {
+      title: "Enlaces Rápidos",
+      items: [
+        { name: "Inicio", path: ROUTES.HOME },
+        { name: "Servicios", path: ROUTES.SERVICES },
+        { name: "Sobre Nosotros", path: ROUTES.ABOUT },
+        { name: "Contacto", path: ROUTES.CONTACT },
+      ],
+    },
+    services: {
+      title: "Servicios",
+      items: [
+        "Consultoría Ambiental",
+        "Gestión de Residuos",
+        "Energías Renovables",
+        "Estudios de Impacto",
+      ],
+    },
+    contact: {
+      title: "Contacto",
+      address: {
+        street: "Calle Principal #123",
+        city: "Ciudad, País",
+      },
+      phone: "+1 234 567 890",
+      email: "info@PRALAMB.com",
+    },
+    social: {
+      facebook: "https://facebook.com/PRALAMB",
+      twitter: "https://twitter.com/PRALAMB",
+      linkedin: "https://linkedin.com/company/PRALAMB",
+      instagram: "https://instagram.com/PRALAMB",
+    },
+    copyright: "© {year} PRALAMB. Todos los derechos reservados.",
+  },
+};
+
+export const THEME = {
+  colors: {
+    primary: "#4A5D4B",
+    primaryDark: "#2C3E2D",
+    primaryDarker: "#1F2B1F",
+    secondary: "#A7B8A1",
+    accent: "#8FA891",
+    background: {
+      light: "#ffffff",
+      dark: "linear-gradient(135deg, #2C3E2D 0%, #1F2B1F 100%)",
+    },
+    text: {
+      light: "#ffffff",
+      dark: "#4A5D4B",
+      muted: "rgba(255,255,255,0.7)",
+    },
+  },
+  gradients: {
+    primary: "linear-gradient(45deg, #4A5D4B 0%, #8FA891 100%)",
+    primaryHover: "linear-gradient(45deg, #8FA891 0%, #4A5D4B 100%)",
+    background: "linear-gradient(135deg, #2C3E2D 0%, #1F2B1F 100%)",
+    text: "linear-gradient(90deg, #ffffff 0%, #A7B8A1 100%)",
+  },
+  effects: {
+    glassmorphism: {
+      backdropFilter: "blur(10px)",
+      background: "rgba(255, 255, 255, 0.05)",
+      border: "1px solid rgba(255, 255, 255, 0.1)",
     },
   },
 };

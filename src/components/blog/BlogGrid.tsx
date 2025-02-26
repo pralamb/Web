@@ -12,7 +12,7 @@ import {
 import { motion } from "framer-motion";
 import { BLOG_POSTS, UI_TEXTS } from "../../config/constants";
 
-const MotionCard = motion(Card);
+const MotionCard = motion.create(Card);
 
 interface BlogGridProps {
   filteredPosts: typeof BLOG_POSTS;

@@ -1,11 +1,11 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useTheme } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ForestIcon from "@mui/icons-material/Forest";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import RecyclingIcon from "@mui/icons-material/Recycling";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const benefits = [
   {
@@ -13,28 +13,23 @@ const benefits = [
     title: "Conservación Ambiental",
     description:
       "Desarrollamos estrategias efectivas para la preservación de ecosistemas y recursos naturales.",
-    color: "#4CAF50",
-    gradient: "linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)",
   },
   {
     icon: <WaterDropIcon sx={{ fontSize: 40 }} />,
     title: "Gestión del Agua",
     description:
       "Implementamos soluciones innovadoras para el tratamiento y conservación del agua.",
-    color: "#2196F3",
-    gradient: "linear-gradient(135deg, #2196F3 0%, #1976D2 100%)",
   },
   {
     icon: <RecyclingIcon sx={{ fontSize: 40 }} />,
     title: "Economía Circular",
     description:
       "Promovemos prácticas sostenibles y la reutilización eficiente de recursos.",
-    color: "#8BC34A",
-    gradient: "linear-gradient(135deg, #8BC34A 0%, #7CB342 100%)",
   },
 ];
 
 const BenefitsSection = () => {
+  const theme = useTheme();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -48,7 +43,6 @@ const BenefitsSection = () => {
       ref={ref}
       sx={{
         py: { xs: 10, md: 16 },
-        background: "linear-gradient(135deg, #1a2f38 0%, #0f1922 100%)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -63,8 +57,7 @@ const BenefitsSection = () => {
           left: "-20%",
           width: "140%",
           height: "200%",
-          background:
-            "radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 60%)",
+          background: `radial-gradient(circle, ${theme.palette.primary.light}1A 0%, transparent 60%)`,
           transform: "rotate(-45deg)",
           pointerEvents: "none",
         }}
@@ -85,7 +78,7 @@ const BenefitsSection = () => {
                 transition={{ delay: 0.2 }}
                 variant="overline"
                 sx={{
-                  color: "#8BC34A",
+                  color: theme.palette.primary.light,
                   fontSize: "1.1rem",
                   fontWeight: 600,
                   letterSpacing: 2,
@@ -100,10 +93,8 @@ const BenefitsSection = () => {
                 sx={{
                   fontSize: { xs: "2rem", md: "3rem" },
                   fontWeight: 800,
-                  color: "white",
                   mb: 3,
-                  background:
-                    "linear-gradient(90deg, #ffffff 0%, #8BC34A 100%)",
+                  background: `linear-gradient(90deg, ${theme.palette.common.white}, ${theme.palette.primary.light})`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -113,7 +104,7 @@ const BenefitsSection = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  color: "rgba(255,255,255,0.7)",
+                  color: theme.palette.text.secondary,
                   fontSize: "1.1rem",
                   lineHeight: 1.8,
                   mb: { xs: 4, md: 0 },
@@ -152,14 +143,14 @@ const BenefitsSection = () => {
                         left: 0,
                         right: 0,
                         height: "4px",
-                        background: benefit.gradient,
+                        background: `linear-gradient(90deg, ${theme.palette.primary.light}, ${theme.palette.secondary.main})`,
                       },
                       "&:hover": {
                         transform: "translateY(-10px)",
                         boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
                         "& .icon-wrapper": {
                           transform: "scale(1.1) rotate(10deg)",
-                          background: benefit.gradient,
+                          background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.main})`,
                         },
                       },
                     }}
@@ -173,8 +164,8 @@ const BenefitsSection = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        backgroundColor: `${benefit.color}15`,
-                        color: "white",
+                        backgroundColor: `${theme.palette.primary.light}15`,
+                        color: theme.palette.common.white,
                         mb: 3,
                         transition: "all 0.3s ease",
                       }}
@@ -185,7 +176,7 @@ const BenefitsSection = () => {
                       variant="h5"
                       sx={{
                         fontWeight: 700,
-                        color: "white",
+                        color: theme.palette.common.white,
                         mb: 2,
                       }}
                     >
@@ -194,7 +185,7 @@ const BenefitsSection = () => {
                     <Typography
                       variant="body1"
                       sx={{
-                        color: "rgba(255,255,255,0.7)",
+                        color: theme.palette.text.secondary,
                         lineHeight: 1.7,
                       }}
                     >
@@ -225,7 +216,7 @@ const BenefitsSection = () => {
             right: "5%",
             width: "200px",
             height: "200px",
-            background: "radial-gradient(circle, #8BC34A 0%, transparent 70%)",
+            background: `radial-gradient(circle, ${theme.palette.primary.light} 0%, transparent 70%)`,
             borderRadius: "50%",
             filter: "blur(40px)",
             opacity: 0.3,
@@ -251,7 +242,7 @@ const BenefitsSection = () => {
             left: "5%",
             width: "150px",
             height: "150px",
-            background: "radial-gradient(circle, #4CAF50 0%, transparent 70%)",
+            background: `radial-gradient(circle, ${theme.palette.secondary.main} 0%, transparent 70%)`,
             borderRadius: "50%",
             filter: "blur(30px)",
             opacity: 0.2,

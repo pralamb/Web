@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link as RouterLink } from "react-router-dom";
 import { ROUTES, UI_TEXTS } from "../../config/constants";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const ServiceCTA = () => {
   return (
@@ -20,10 +20,10 @@ const ServiceCTA = () => {
       transition={{ duration: 0.5, delay: 0.4 }}
     >
       <Typography variant="h4" color="primary" gutterBottom>
-        {UI_TEXTS.sections.services.cta.title}
+        {UI_TEXTS.sections.servicesPage.cta.title}
       </Typography>
       <Typography variant="body1" color="text.secondary" paragraph>
-        {UI_TEXTS.sections.services.cta.description}
+        {UI_TEXTS.sections.servicesPage.cta.description}
       </Typography>
       <Button
         variant="contained"

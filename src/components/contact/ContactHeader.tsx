@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { UI_TEXTS } from "../../config/constants";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const ContactHeader = () => {
   return (

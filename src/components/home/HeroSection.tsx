@@ -26,7 +26,7 @@ const HeroSection = () => {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        background: theme.palette.primary.dark,
+        background: theme.colors.background,
         overflow: "hidden",
       }}
     >
@@ -50,7 +50,7 @@ const HeroSection = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: `linear-gradient(to bottom, ${theme.palette.primary.dark}B3, ${theme.palette.primary.dark}E6)`,
+            background: `linear-gradient(to bottom, ${theme.colors.background}B3, ${theme.colors.background}E6)`,
           },
         }}
       />
@@ -106,7 +106,7 @@ const HeroSection = () => {
               <MotionTypography
                 variant="h5"
                 sx={{
-                  color: theme.palette.common.white,
+                  color: theme.palette.text.secondary,
                   mb: 6,
                   maxWidth: "600px",
                   lineHeight: 1.8,
@@ -157,34 +157,6 @@ const HeroSection = () => {
                   }}
                 >
                   {UI_TEXTS.buttons.ourServices}
-                </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
-                  component={RouterLink}
-                  to={ROUTES.ABOUT}
-                  className="button-hover"
-                  sx={{
-                    py: 2.5,
-                    px: 6,
-                    borderColor: "rgba(255,255,255,0.3)",
-                    color: theme.palette.common.white,
-                    borderRadius: theme.shape.borderRadius * 4,
-                    fontSize: "1.1rem",
-                    fontWeight: 600,
-                    textTransform: "none",
-                    backdropFilter: "blur(10px)",
-                    background: "rgba(255,255,255,0.05)",
-                    "&:hover": {
-                      borderColor: theme.palette.primary.light,
-                      background: "rgba(255,255,255,0.1)",
-                      transform: "translateY(-2px)",
-                    },
-                    transition: "all 0.3s ease",
-                    flex: { xs: "1 1 100%", sm: "0 1 auto" },
-                  }}
-                >
-                  Sobre Nosotros
                 </Button>
               </MotionBox>
             </MotionBox>

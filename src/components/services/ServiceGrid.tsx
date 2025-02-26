@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { Link as RouterLink } from "react-router-dom";
 import { SERVICES, ROUTES, UI_TEXTS } from "../../config/constants";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const ServiceGrid = () => {
   return (
@@ -44,7 +44,7 @@ const ServiceGrid = () => {
                   color="primary"
                   sx={{ mt: 2 }}
                 >
-                  {UI_TEXTS.sections.services.features.title}
+                  {UI_TEXTS.sections.servicesPage.features.title}
                 </Typography>
                 <Box component="ul" sx={{ pl: 2 }}>
                   {service.features.map((feature, i) => (

@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { UI_TEXTS } from "../../config/constants";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const ServiceHeader = () => {
   return (
@@ -13,10 +13,10 @@ const ServiceHeader = () => {
       sx={{ mb: 6 }}
     >
       <Typography variant="h2" color="primary" gutterBottom>
-        {UI_TEXTS.sections.services.title}
+        {UI_TEXTS.sections.servicesPage.title}
       </Typography>
       <Typography variant="h5" color="text.secondary" paragraph>
-        {UI_TEXTS.sections.services.subtitle}
+        {UI_TEXTS.sections.servicesPage.subtitle}
       </Typography>
     </MotionBox>
   );

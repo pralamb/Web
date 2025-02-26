@@ -7,16 +7,18 @@ import {
   CardContent,
   CardMedia,
   Button,
+  useTheme,
 } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { SERVICES } from "../../config/constants";
 import { useInView } from "react-intersection-observer";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-const MotionCard = motion(Card);
-const MotionBox = motion(Box);
+const MotionCard = motion.create(Card);
+const MotionBox = motion.create(Box);
 
 const ServicesSection = () => {
+  const theme = useTheme();
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
@@ -32,19 +34,7 @@ const ServicesSection = () => {
         pt: { xs: 8, md: 12 },
         pb: { xs: 10, md: 16 },
         position: "relative",
-        background: "linear-gradient(135deg, #1a2f38 0%, #0f1922 100%)",
         overflow: "hidden",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "100%",
-          background: "url('/leaf-pattern.png')",
-          opacity: 0.05,
-          zIndex: 1,
-        },
       }}
     >
       {/* Animated Background Elements */}
@@ -57,8 +47,7 @@ const ServicesSection = () => {
           left: "-20%",
           width: "140%",
           height: "200%",
-          background:
-            "radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 60%)",
+          background: `radial-gradient(circle, ${theme.palette.primary.light}1A 0%, transparent 60%)`,
           transform: "rotate(-45deg)",
           pointerEvents: "none",
         }}
@@ -78,7 +67,7 @@ const ServicesSection = () => {
             transition={{ delay: 0.2 }}
             variant="overline"
             sx={{
-              color: "#8BC34A",
+              color: theme.palette.primary.light,
               fontSize: "1.1rem",
               fontWeight: 600,
               letterSpacing: 2,
@@ -93,9 +82,8 @@ const ServicesSection = () => {
             sx={{
               fontSize: { xs: "2rem", md: "3.5rem" },
               fontWeight: 800,
-              color: "white",
               mb: 3,
-              background: "linear-gradient(90deg, #ffffff 0%, #8BC34A 100%)",
+              background: `linear-gradient(90deg, ${theme.palette.common.white}, ${theme.palette.primary.light})`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -105,7 +93,7 @@ const ServicesSection = () => {
           <Typography
             variant="h5"
             sx={{
-              color: "rgba(255,255,255,0.7)",
+              color: theme.palette.text.secondary,
               maxWidth: "800px",
               mx: "auto",
               mb: 8,
@@ -172,8 +160,7 @@ const ServicesSection = () => {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      background:
-                        "linear-gradient(to top, rgba(26, 47, 56, 0.9), transparent)",
+                      background: `linear-gradient(to top, ${theme.palette.primary.dark}E6, transparent)`,
                       height: "100%",
                       opacity: 0.5,
                       transition: "opacity 0.3s ease-in-out",
@@ -184,8 +171,7 @@ const ServicesSection = () => {
                   sx={{
                     p: 4,
                     flexGrow: 1,
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)",
+                    background: "rgba(255, 255, 255, 0.05)",
                   }}
                 >
                   <Typography
@@ -193,7 +179,7 @@ const ServicesSection = () => {
                     variant="h5"
                     sx={{
                       fontWeight: 700,
-                      color: "white",
+                      color: theme.palette.common.white,
                       mb: 2,
                     }}
                   >
@@ -202,7 +188,7 @@ const ServicesSection = () => {
                   <Typography
                     variant="body1"
                     sx={{
-                      color: "rgba(255,255,255,0.7)",
+                      color: theme.palette.text.secondary,
                       mb: 3,
                       lineHeight: 1.7,
                     }}
@@ -213,12 +199,12 @@ const ServicesSection = () => {
                     variant="text"
                     endIcon={<ArrowForwardIcon />}
                     sx={{
-                      color: "#8BC34A",
+                      color: theme.palette.primary.light,
                       fontWeight: 600,
                       p: 0,
                       "&:hover": {
                         backgroundColor: "transparent",
-                        color: "#9CCC65",
+                        color: theme.palette.secondary.main,
                         "& .MuiSvgIcon-root": {
                           transform: "translateX(5px)",
                         },
@@ -254,7 +240,7 @@ const ServicesSection = () => {
             right: "5%",
             width: "200px",
             height: "200px",
-            background: "radial-gradient(circle, #8BC34A 0%, transparent 70%)",
+            background: `radial-gradient(circle, ${theme.palette.primary.light} 0%, transparent 70%)`,
             borderRadius: "50%",
             filter: "blur(40px)",
             opacity: 0.3,
@@ -280,7 +266,7 @@ const ServicesSection = () => {
             left: "5%",
             width: "150px",
             height: "150px",
-            background: "radial-gradient(circle, #4CAF50 0%, transparent 70%)",
+            background: `radial-gradient(circle, ${theme.palette.secondary.main} 0%, transparent 70%)`,
             borderRadius: "50%",
             filter: "blur(30px)",
             opacity: 0.2,

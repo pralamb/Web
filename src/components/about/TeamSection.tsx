@@ -2,7 +2,7 @@ import { Box, Grid, Typography, Card, CardContent } from "@mui/material";
 import { motion } from "framer-motion";
 import { TEAM_MEMBERS, UI_TEXTS } from "../../config/constants";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const TeamSection = () => {
   return (
