@@ -11,17 +11,18 @@ import {
   Button,
   MenuItem,
   useScrollTrigger,
+  Stack,
+  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ROUTES } from "../../config/constants";
-import { motion, AnimatePresence } from "framer-motion";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { UI_TEXTS } from "../../config/constants";
 
-const pages = [
-  { title: "Inicio", path: ROUTES.HOME },
-  { title: "Servicios", path: ROUTES.SERVICES },
-  { title: "Sobre Nosotros", path: ROUTES.ABOUT },
-  { title: "Contacto", path: ROUTES.CONTACT },
-];
+const { navigation, footer } = UI_TEXTS;
 
 interface Props {
   window?: () => Window;
@@ -31,6 +32,7 @@ const Navbar = (props: Props) => {
   const { window } = props;
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const location = useLocation();
+  const theme = useTheme();
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -51,32 +53,41 @@ const Navbar = (props: Props) => {
       position="fixed"
       elevation={0}
       sx={{
-        background: trigger ? "rgba(255, 255, 255, 0.95)" : "transparent",
+        background: "transparent",
         backdropFilter: trigger ? "blur(10px)" : "none",
         boxShadow: trigger ? "0 4px 30px rgba(0, 0, 0, 0.1)" : "none",
-        borderBottom: trigger ? "1px solid rgba(255, 255, 255, 0.2)" : "none",
+        borderBottom: trigger ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
         transition: "all 0.3s ease",
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar
+          disableGutters
+          sx={{
+            minHeight: { xs: "64px", md: "80px" },
+            py: { xs: 1, md: 1.5 },
+          }}
+        >
           {/* Logo - Desktop */}
-          <Typography
-            variant="h6"
-            noWrap
+          <Box
             component={RouterLink}
             to="/"
             sx={{
               mr: 4,
               display: { xs: "none", md: "flex" },
-              fontWeight: 700,
-              color: trigger ? "#2C3E2D" : "white",
               textDecoration: "none",
-              transition: "color 0.3s ease",
             }}
           >
-            ECOAMBIENTAL
-          </Typography>
+            <Box
+              component="img"
+              src="/logo.webp"
+              alt="Logo"
+              sx={{
+                height: "50px",
+                width: "auto",
+              }}
+            />
+          </Box>
 
           {/* Mobile Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -86,7 +97,7 @@ const Navbar = (props: Props) => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               sx={{
-                color: trigger ? "#2C3E2D" : "white",
+                color: theme.palette.common.white,
               }}
             >
               <MenuIcon />
@@ -108,7 +119,7 @@ const Navbar = (props: Props) => {
               sx={{
                 display: { xs: "block", md: "none" },
                 "& .MuiPaper-root": {
-                  background: "rgba(255, 255, 255, 0.95)",
+                  background: "rgba(26, 47, 56, 0.9)",
                   backdropFilter: "blur(10px)",
                   borderRadius: "15px",
                   marginTop: "1rem",
@@ -116,43 +127,48 @@ const Navbar = (props: Props) => {
                 },
               }}
             >
-              {pages.map((page) => (
+              {navigation.items.map((item) => (
                 <MenuItem
-                  key={page.title}
+                  key={item.title}
                   onClick={handleCloseNavMenu}
                   component={RouterLink}
-                  to={page.path}
-                  selected={location.pathname === page.path}
+                  to={item.path}
+                  selected={location.pathname === item.path}
                   sx={{
+                    color: theme.palette.common.white,
                     "&.Mui-selected": {
-                      backgroundColor: "rgba(139, 195, 74, 0.1)",
-                      color: "#8BC34A",
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      color: theme.palette.primary.light,
                     },
                   }}
                 >
-                  <Typography textAlign="center">{page.title}</Typography>
+                  <Typography textAlign="center">{item.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
           {/* Logo - Mobile */}
-          <Typography
-            variant="h6"
-            noWrap
+          <Box
             component={RouterLink}
             to="/"
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-              fontWeight: 700,
-              color: trigger ? "#2C3E2D" : "white",
               textDecoration: "none",
-              transition: "color 0.3s ease",
+              justifyContent: "center",
             }}
           >
-            ECOAMBIENTAL
-          </Typography>
+            <Box
+              component="img"
+              src="/logo.webp"
+              alt="Logo"
+              sx={{
+                height: "40px",
+                width: "auto",
+              }}
+            />
+          </Box>
 
           {/* Desktop Menu */}
           <Box
@@ -163,79 +179,82 @@ const Navbar = (props: Props) => {
               gap: 4,
             }}
           >
-            <AnimatePresence>
-              {pages.map((page) => (
-                <motion.div
-                  key={page.title}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Button
-                    component={RouterLink}
-                    to={page.path}
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      color: trigger ? "#2C3E2D" : "white",
-                      display: "block",
-                      fontWeight: 500,
-                      fontSize: "1rem",
-                      textTransform: "none",
-                      position: "relative",
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        width: location.pathname === page.path ? "100%" : "0%",
-                        height: "2px",
-                        bottom: -2,
-                        left: 0,
-                        backgroundColor: "#8BC34A",
-                        transition: "width 0.3s ease",
-                      },
-                      "&:hover::after": {
-                        width: "100%",
-                      },
-                    }}
-                  >
-                    {page.title}
-                  </Button>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+            {navigation.items.map((item) => (
+              <Button
+                key={item.title}
+                component={RouterLink}
+                to={item.path}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  color: theme.palette.common.white,
+                  display: "block",
+                  fontWeight: 500,
+                  fontSize: "1rem",
+                  textTransform: "none",
+                  position: "relative",
+                  opacity: location.pathname === item.path ? 1 : 0.7,
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    width: location.pathname === item.path ? "100%" : "0%",
+                    height: "2px",
+                    bottom: -2,
+                    left: 0,
+                    backgroundColor: theme.palette.primary.light,
+                    transition: "width 0.3s ease",
+                  },
+                  "&:hover": {
+                    opacity: 1,
+                    "&::after": {
+                      width: "100%",
+                    },
+                  },
+                }}
+              >
+                {item.title}
+              </Button>
+            ))}
           </Box>
 
-          {/* Contact Button */}
-          <Box sx={{ flexGrow: 0 }}>
-            <Button
-              component={RouterLink}
-              to={ROUTES.CONTACT}
-              variant="contained"
-              sx={{
-                display: { xs: "none", md: "inline-flex" },
-                py: 1.5,
-                px: 4,
-                backgroundColor: "#8BC34A",
-                color: "white",
-                borderRadius: "50px",
-                fontSize: "1rem",
-                fontWeight: 600,
-                textTransform: "none",
-                boxShadow: "0 10px 20px rgba(139, 195, 74, 0.2)",
-                background: "linear-gradient(45deg, #8BC34A 0%, #7CB342 100%)",
-                border: "none",
-                "&:hover": {
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 15px 30px rgba(139, 195, 74, 0.3)",
-                  background:
-                    "linear-gradient(45deg, #7CB342 0%, #689F38 100%)",
-                },
-                transition: "all 0.3s ease",
-              }}
-            >
-              Contáctanos
-            </Button>
-          </Box>
+          {/* Social Icons */}
+          <Stack
+            direction="row"
+            spacing={1}
+            sx={{
+              display: { xs: "none", md: "flex" },
+            }}
+          >
+            {[
+              {
+                icon: <WhatsAppIcon />,
+                url: `https://wa.me/${footer.contact.phone.replace(/\D/g, "")}`,
+              },
+              { icon: <FacebookIcon />, url: footer.social.facebook },
+              { icon: <TwitterIcon />, url: footer.social.twitter },
+              { icon: <LinkedInIcon />, url: footer.social.linkedin },
+              { icon: <InstagramIcon />, url: footer.social.instagram },
+            ].map((social, index) => (
+              <IconButton
+                key={index}
+                component="a"
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="small"
+                sx={{
+                  color: theme.palette.common.white,
+                  opacity: 0.7,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    opacity: 1,
+                    transform: "translateY(-2px)",
+                  },
+                }}
+              >
+                {social.icon}
+              </IconButton>
+            ))}
+          </Stack>
         </Toolbar>
       </Container>
     </AppBar>

@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import { muiTheme } from "./config/theme";
 import { ROUTES } from "./config/constants";
@@ -15,16 +15,14 @@ import Footer from "./components/layout/Footer";
 function App() {
   return (
     <ThemeProvider theme={muiTheme}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path={ROUTES.HOME} element={<Home />} />
-          <Route path={ROUTES.ABOUT} element={<About />} />
-          <Route path={ROUTES.SERVICES} element={<Services />} />
-          <Route path={ROUTES.BLOG} element={<Blog />} />
-          <Route path={ROUTES.CONTACT} element={<Contact />} />
-        </Routes>
-      </Router>
+      <Navbar />
+      <Routes>
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.ABOUT} element={<About />} />
+        <Route path={ROUTES.SERVICES} element={<Services />} />
+        <Route path={ROUTES.BLOG} element={<Blog />} />
+        <Route path={ROUTES.CONTACT} element={<Contact />} />
+      </Routes>
       <Footer />
     </ThemeProvider>
   );
