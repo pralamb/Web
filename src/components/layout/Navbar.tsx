@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import {
   AppBar,
@@ -13,14 +13,29 @@ import {
   useScrollTrigger,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { NAVIGATION, COMPANY_INFO } from "../../config/constants";
+import { ROUTES } from "../../config/constants";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = () => {
+const pages = [
+  { title: "Inicio", path: ROUTES.HOME },
+  { title: "Servicios", path: ROUTES.SERVICES },
+  { title: "Sobre Nosotros", path: ROUTES.ABOUT },
+  { title: "Contacto", path: ROUTES.CONTACT },
+];
+
+interface Props {
+  window?: () => Window;
+}
+
+const Navbar = (props: Props) => {
+  const { window } = props;
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const location = useLocation();
+
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,
+    target: window ? window() : undefined,
   });
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -34,62 +49,44 @@ const Navbar = () => {
   return (
     <AppBar
       position="fixed"
+      elevation={0}
       sx={{
-        background: trigger
-          ? "rgba(255, 255, 255, 0.95)"
-          : "rgba(255, 255, 255, 0.8)",
-        backdropFilter: "blur(10px)",
-        boxShadow: trigger ? "0 4px 20px rgba(0,0,0,0.1)" : "none",
-        transition: "all 0.3s ease-in-out",
+        background: trigger ? "rgba(255, 255, 255, 0.95)" : "transparent",
+        backdropFilter: trigger ? "blur(10px)" : "none",
+        boxShadow: trigger ? "0 4px 30px rgba(0, 0, 0, 0.1)" : "none",
+        borderBottom: trigger ? "1px solid rgba(255, 255, 255, 0.2)" : "none",
+        transition: "all 0.3s ease",
       }}
     >
-      <Container maxWidth="lg">
-        <Toolbar
-          disableGutters
-          sx={{
-            minHeight: { xs: "70px", md: "90px" },
-            transition: "min-height 0.3s ease-in-out",
-          }}
-        >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
           {/* Logo - Desktop */}
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              mr: 4,
-              height: trigger ? "70px" : "80px",
-              transition: "height 0.3s ease-in-out",
-            }}
+          <Typography
+            variant="h6"
+            noWrap
             component={RouterLink}
             to="/"
+            sx={{
+              mr: 4,
+              display: { xs: "none", md: "flex" },
+              fontWeight: 700,
+              color: trigger ? "#2C3E2D" : "white",
+              textDecoration: "none",
+              transition: "color 0.3s ease",
+            }}
           >
-            <Box
-              component="img"
-              src="/logo.webp"
-              alt={COMPANY_INFO.name}
-              sx={{
-                height: "100%",
-                width: "auto",
-                transition: "transform 0.3s ease-in-out",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-              }}
-            />
-          </Box>
+            ECOAMBIENTAL
+          </Typography>
 
-          {/* Mobile menu */}
+          {/* Mobile Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               sx={{
-                color: "text.primary",
-                "&:hover": {
-                  backgroundColor: "rgba(0,0,0,0.04)",
-                },
+                color: trigger ? "#2C3E2D" : "white",
               }}
             >
               <MenuIcon />
@@ -111,106 +108,133 @@ const Navbar = () => {
               sx={{
                 display: { xs: "block", md: "none" },
                 "& .MuiPaper-root": {
-                  borderRadius: 2,
-                  mt: 1.5,
-                  backgroundColor: "rgba(255, 255, 255, 0.95)",
+                  background: "rgba(255, 255, 255, 0.95)",
                   backdropFilter: "blur(10px)",
+                  borderRadius: "15px",
+                  marginTop: "1rem",
+                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                 },
               }}
             >
-              {NAVIGATION.map((item) => (
+              {pages.map((page) => (
                 <MenuItem
-                  key={item.path}
+                  key={page.title}
                   onClick={handleCloseNavMenu}
                   component={RouterLink}
-                  to={item.path}
-                  selected={location.pathname === item.path}
+                  to={page.path}
+                  selected={location.pathname === page.path}
                   sx={{
-                    minWidth: 200,
-                    transition: "all 0.2s ease-in-out",
-                    "&:hover": {
-                      backgroundColor: "rgba(74, 93, 75, 0.08)",
-                    },
                     "&.Mui-selected": {
-                      backgroundColor: "rgba(74, 93, 75, 0.12)",
+                      backgroundColor: "rgba(139, 195, 74, 0.1)",
+                      color: "#8BC34A",
                     },
                   }}
                 >
-                  <Typography textAlign="center">{item.name}</Typography>
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
           {/* Logo - Mobile */}
-          <Box
+          <Typography
+            variant="h6"
+            noWrap
+            component={RouterLink}
+            to="/"
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-              justifyContent: "center",
-              height: "60px",
+              fontWeight: 700,
+              color: trigger ? "#2C3E2D" : "white",
+              textDecoration: "none",
+              transition: "color 0.3s ease",
             }}
-            component={RouterLink}
-            to="/"
           >
-            <Box
-              component="img"
-              src="/logo.webp"
-              alt={COMPANY_INFO.name}
-              sx={{
-                height: "100%",
-                width: "auto",
-                transition: "transform 0.3s ease-in-out",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-              }}
-            />
-          </Box>
+            ECOAMBIENTAL
+          </Typography>
 
-          {/* Desktop menu */}
+          {/* Desktop Menu */}
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
-              gap: 1,
+              justifyContent: "center",
+              gap: 4,
             }}
           >
-            {NAVIGATION.map((item) => (
-              <Button
-                key={item.path}
-                component={RouterLink}
-                to={item.path}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  px: 3,
-                  color: "text.primary",
-                  position: "relative",
-                  fontWeight: 500,
-                  "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    bottom: 10,
-                    left: 12,
-                    right: 12,
-                    height: 2,
-                    bgcolor: "primary.main",
-                    transform:
-                      location.pathname === item.path
-                        ? "scaleX(1)"
-                        : "scaleX(0)",
-                    transition: "transform 0.3s ease-in-out",
-                  },
-                  "&:hover::after": {
-                    transform: "scaleX(1)",
-                  },
-                }}
-              >
-                {item.name}
-              </Button>
-            ))}
+            <AnimatePresence>
+              {pages.map((page) => (
+                <motion.div
+                  key={page.title}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Button
+                    component={RouterLink}
+                    to={page.path}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      color: trigger ? "#2C3E2D" : "white",
+                      display: "block",
+                      fontWeight: 500,
+                      fontSize: "1rem",
+                      textTransform: "none",
+                      position: "relative",
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        width: location.pathname === page.path ? "100%" : "0%",
+                        height: "2px",
+                        bottom: -2,
+                        left: 0,
+                        backgroundColor: "#8BC34A",
+                        transition: "width 0.3s ease",
+                      },
+                      "&:hover::after": {
+                        width: "100%",
+                      },
+                    }}
+                  >
+                    {page.title}
+                  </Button>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </Box>
+
+          {/* Contact Button */}
+          <Box sx={{ flexGrow: 0 }}>
+            <Button
+              component={RouterLink}
+              to={ROUTES.CONTACT}
+              variant="contained"
+              sx={{
+                display: { xs: "none", md: "inline-flex" },
+                py: 1.5,
+                px: 4,
+                backgroundColor: "#8BC34A",
+                color: "white",
+                borderRadius: "50px",
+                fontSize: "1rem",
+                fontWeight: 600,
+                textTransform: "none",
+                boxShadow: "0 10px 20px rgba(139, 195, 74, 0.2)",
+                background: "linear-gradient(45deg, #8BC34A 0%, #7CB342 100%)",
+                border: "none",
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 15px 30px rgba(139, 195, 74, 0.3)",
+                  background:
+                    "linear-gradient(45deg, #7CB342 0%, #689F38 100%)",
+                },
+                transition: "all 0.3s ease",
+              }}
+            >
+              Contáctanos
+            </Button>
           </Box>
         </Toolbar>
       </Container>
