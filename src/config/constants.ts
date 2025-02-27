@@ -158,20 +158,20 @@ export const UI_TEXTS = {
       },
     },
     blog: {
-      title: "Blog y Novedades",
-      subtitle:
-        "Mantente al día con las últimas noticias y tendencias en sostenibilidad ambiental",
-      searchPlaceholder: "Buscar artículos...",
-      noResults: "No se encontraron artículos que coincidan con tu búsqueda.",
+      title: "Nuestro Blog",
+      subtitle: "Conocimiento y Experiencia Ambiental",
+      description:
+        "Descubre artículos, noticias y recursos sobre sostenibilidad, conservación y gestión ambiental.",
       search: {
         placeholder: "Buscar artículos...",
       },
+      noResults: "No se encontraron artículos que coincidan con tu búsqueda.",
       date: {
         locale: "es-ES",
         options: {
-          year: "numeric" as const,
-          month: "long" as const,
-          day: "numeric" as const,
+          year: "numeric",
+          month: "long",
+          day: "numeric",
         },
       },
     },
@@ -210,6 +210,7 @@ export const UI_TEXTS = {
       { title: "Inicio", path: ROUTES.HOME },
       { title: "Servicios", path: ROUTES.SERVICES },
       { title: "Sobre Nosotros", path: ROUTES.ABOUT },
+      { title: "Blog", path: ROUTES.BLOG },
       { title: "Contacto", path: ROUTES.CONTACT },
     ],
   },
@@ -225,6 +226,7 @@ export const UI_TEXTS = {
         { name: "Inicio", path: ROUTES.HOME },
         { name: "Servicios", path: ROUTES.SERVICES },
         { name: "Sobre Nosotros", path: ROUTES.ABOUT },
+        { name: "Blog", path: ROUTES.BLOG },
         { name: "Contacto", path: ROUTES.CONTACT },
       ],
     },
