@@ -13,18 +13,24 @@ const benefits = [
     title: "Conservación Ambiental",
     description:
       "Desarrollamos estrategias efectivas para la preservación de ecosistemas y recursos naturales.",
+    iconColor: "#4CAF50", // Verde bosque
+    gradientColors: ["#4CAF50", "#496cb3"], // Verde bosque a verde oscuro
   },
   {
     icon: <WaterDropIcon sx={{ fontSize: 40 }} />,
     title: "Gestión del Agua",
     description:
       "Implementamos soluciones innovadoras para el tratamiento y conservación del agua.",
+    iconColor: "#2196F3", // Azul agua
+    gradientColors: ["#2196F3", "#496cb3"], // Azul agua a azul oscuro
   },
   {
     icon: <RecyclingIcon sx={{ fontSize: 40 }} />,
     title: "Economía Circular",
     description:
       "Promovemos prácticas sostenibles y la reutilización eficiente de recursos.",
+    iconColor: "#496cb3", // Verde reciclaje
+    gradientColors: ["#8BC34A", "#496cb3"], // Verde reciclaje a verde oscuro
   },
 ];
 
@@ -143,14 +149,14 @@ const BenefitsSection = () => {
                         left: 0,
                         right: 0,
                         height: "4px",
-                        background: `linear-gradient(90deg, ${theme.palette.primary.light}, ${theme.palette.secondary.main})`,
+                        background: `linear-gradient(90deg, ${benefit.gradientColors[0]}, ${benefit.gradientColors[1]})`,
                       },
                       "&:hover": {
                         transform: "translateY(-10px)",
                         boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
                         "& .icon-wrapper": {
                           transform: "scale(1.1) rotate(10deg)",
-                          background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.main})`,
+                          background: `linear-gradient(135deg, ${benefit.gradientColors[0]}, ${benefit.gradientColors[1]})`,
                         },
                       },
                     }}
@@ -164,10 +170,16 @@ const BenefitsSection = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        backgroundColor: `${theme.palette.primary.light}15`,
-                        color: theme.palette.common.white,
+                        backgroundColor: `${benefit.iconColor}15`,
+                        color: benefit.iconColor,
                         mb: 3,
                         transition: "all 0.3s ease",
+                        "& .MuiSvgIcon-root": {
+                          transition: "all 0.3s ease",
+                        },
+                        "&:hover .MuiSvgIcon-root": {
+                          transform: "scale(1.1)",
+                        },
                       }}
                     >
                       {benefit.icon}

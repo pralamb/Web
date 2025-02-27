@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import { UI_TEXTS } from "../../config/constants";
 
 const stats = UI_TEXTS.sections.stats.items;
+const MotionBox = motion.create(Box);
 
 interface StatItem {
   value: number;
@@ -44,6 +45,57 @@ export default function StatsSection() {
       />
 
       <Container maxWidth="lg">
+        {/* Title and Description Section */}
+        <MotionBox
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          sx={{ mb: { xs: 8, md: 12 }, textAlign: "center" }}
+        >
+          <Typography
+            component={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            variant="overline"
+            sx={{
+              color: theme.palette.primary.light,
+              fontSize: "1.1rem",
+              fontWeight: 600,
+              letterSpacing: 2,
+              mb: 2,
+              display: "block",
+            }}
+          >
+            {UI_TEXTS.sections.stats.overline}
+          </Typography>
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "2rem", md: "3.5rem" },
+              fontWeight: 800,
+              mb: 3,
+              background: `linear-gradient(90deg, ${theme.palette.common.white}, ${theme.palette.primary.light})`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {UI_TEXTS.sections.stats.title}
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              color: theme.palette.text.secondary,
+              maxWidth: "800px",
+              mx: "auto",
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              lineHeight: 1.8,
+            }}
+          >
+            {UI_TEXTS.sections.stats.description}
+          </Typography>
+        </MotionBox>
+
         <Grid container spacing={4}>
           {stats.map((stat: StatItem, index: number) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
@@ -52,11 +104,18 @@ export default function StatsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                style={{ height: "100%" }}
               >
                 <Box
                   sx={{
                     p: 4,
                     height: "100%",
+                    minHeight: { xs: "auto", md: "280px" },
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    textAlign: "center",
                     background: "rgba(255, 255, 255, 0.05)",
                     backdropFilter: "blur(10px)",
                     borderRadius: "20px",
@@ -65,7 +124,6 @@ export default function StatsSection() {
                     transition: "all 0.3s ease-in-out",
                     overflow: "hidden",
                     position: "relative",
-                    textAlign: "center",
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -92,6 +150,7 @@ export default function StatsSection() {
                       background: `linear-gradient(135deg, ${theme.palette.common.white}, ${theme.palette.primary.light})`,
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
+                      width: "100%",
                     }}
                   >
                     <CountUp
@@ -109,6 +168,7 @@ export default function StatsSection() {
                       fontWeight: 700,
                       color: "white",
                       mb: 2,
+                      width: "100%",
                     }}
                   >
                     {stat.label}
@@ -118,6 +178,7 @@ export default function StatsSection() {
                     sx={{
                       color: "rgba(255,255,255,0.7)",
                       lineHeight: 1.7,
+                      width: "100%",
                     }}
                   >
                     {stat.description}

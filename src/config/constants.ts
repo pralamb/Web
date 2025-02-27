@@ -37,30 +37,37 @@ export const UI_TEXTS = {
         "Soluciones innovadoras y sostenibles para proteger nuestro planeta y construir un futuro más verde",
     },
     stats: {
+      overline: "NUESTRO IMPACTO",
+      title: "Números que Hablan por Sí Mismos",
+      description:
+        "Descubre el alcance de nuestro compromiso con el medio ambiente a través de resultados tangibles y medibles",
       items: [
         {
-          value: 150,
+          value: 500,
           suffix: "+",
           label: "Proyectos Completados",
-          description: "Soluciones ambientales implementadas",
+          description:
+            "Soluciones ambientales implementadas con éxito en diversos sectores",
         },
         {
           value: 1000,
-          suffix: "ha",
-          label: "Áreas Protegidas",
-          description: "Conservación y restauración",
+          suffix: "K",
+          label: "Toneladas Recicladas",
+          description: "Material procesado y reintegrado al ciclo productivo",
         },
         {
-          value: 85,
+          value: 250,
+          suffix: "+",
+          label: "Clientes Satisfechos",
+          description:
+            "Empresas que confían en nuestra experiencia y resultados",
+        },
+        {
+          value: 95,
           suffix: "%",
-          label: "Eficiencia",
-          description: "En gestión de recursos hídricos",
-        },
-        {
-          value: 2500,
-          suffix: "ton",
-          label: "Residuos Gestionados",
-          description: "Anualmente de forma sostenible",
+          label: "Tasa de Éxito",
+          description:
+            "Efectividad comprobada en nuestros proyectos ambientales",
         },
       ],
     },

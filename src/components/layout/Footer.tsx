@@ -18,6 +18,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import PralambLogo2 from "../logo/Logo2";
 
 const { footer } = UI_TEXTS;
 
@@ -51,21 +52,19 @@ const Footer = () => {
         <Grid container spacing={8}>
           {/* Company Info */}
           <Grid item xs={12} md={4}>
-            <Typography
-              variant="h6"
+            <Box
               component={RouterLink}
-              to={ROUTES.HOME}
+              to="/"
               sx={{
-                fontWeight: 700,
-                color: theme.palette.primary.light,
-                mb: 3,
-                textDecoration: "none",
-                display: "block",
-                fontSize: "1.5rem",
+                mr: 4,
+                display: { xs: "none", md: "flex" },
+                alignItems: "center",
+                height: "64px", // Ajusta esto según la altura de tu barra de navegación
               }}
             >
-              {footer.company.name}
-            </Typography>
+              <PralambLogo2 width={150} height={40} />
+            </Box>
+
             <Typography
               variant="body1"
               sx={{

@@ -160,7 +160,6 @@ const ServicesSection = () => {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      background: `linear-gradient(to top, ${theme.palette.primary.dark}E6, transparent)`,
                       height: "100%",
                       opacity: 0.5,
                       transition: "opacity 0.3s ease-in-out",
