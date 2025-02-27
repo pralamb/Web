@@ -38,36 +38,33 @@ export const UI_TEXTS = {
     },
     stats: {
       overline: "NUESTRO IMPACTO",
-      title: "Números que Hablan por Sí Mismos",
+      title: "Resultados que Hablan",
       description:
-        "Descubre el alcance de nuestro compromiso con el medio ambiente a través de resultados tangibles y medibles",
+        "Nuestro compromiso con el medio ambiente se refleja en números concretos y resultados tangibles.",
       items: [
         {
-          value: 500,
+          value: 100,
           suffix: "+",
-          label: "Proyectos Completados",
-          description:
-            "Soluciones ambientales implementadas con éxito en diversos sectores",
+          label: "Proyectos",
+          description: "Proyectos ambientales completados con éxito",
         },
         {
-          value: 1000,
+          value: 50,
           suffix: "K",
-          label: "Toneladas Recicladas",
-          description: "Material procesado y reintegrado al ciclo productivo",
+          label: "Árboles",
+          description: "Árboles plantados en proyectos de reforestación",
         },
         {
-          value: 250,
+          value: 25,
           suffix: "+",
-          label: "Clientes Satisfechos",
-          description:
-            "Empresas que confían en nuestra experiencia y resultados",
+          label: "Países",
+          description: "Países donde hemos implementado soluciones",
         },
         {
           value: 95,
           suffix: "%",
-          label: "Tasa de Éxito",
-          description:
-            "Efectividad comprobada en nuestros proyectos ambientales",
+          label: "Satisfacción",
+          description: "Clientes satisfechos con nuestros servicios",
         },
       ],
     },
@@ -101,45 +98,63 @@ export const UI_TEXTS = {
       ],
     },
     about: {
-      title: "Sobre Nosotros",
-      description:
-        "Desde nuestra fundación, nos hemos dedicado a proporcionar soluciones ambientales innovadoras y sostenibles para empresas de todos los sectores. Nuestro compromiso con el medio ambiente y la excelencia técnica nos ha convertido en un referente en el sector de la consultoría ambiental.",
+      title: "Comprometidos con el Medio Ambiente",
+      overline: "NUESTRA HISTORIA",
+      history: {
+        description:
+          "Desde nuestra fundación, hemos estado a la vanguardia de la consultoría ambiental, trabajando incansablemente para crear un futuro más sostenible. Nuestra trayectoria está marcada por el compromiso con la innovación y la excelencia en cada proyecto que emprendemos.",
+        achievements: [
+          "Más de 100 proyectos de impacto ambiental completados con éxito",
+          "Reconocimiento internacional por nuestras prácticas sostenibles",
+          "Certificación ISO 14001 en Gestión Ambiental",
+          "Premio Nacional a la Innovación en Sostenibilidad 2023",
+        ],
+      },
       values: {
-        title: "Nuestros Valores",
+        overline: "NUESTROS VALORES",
+        title: "Lo que nos Define",
+        description:
+          "Nuestros valores fundamentales guían cada acción y decisión que tomamos en nuestro compromiso con el medio ambiente.",
         items: [
           {
             title: "Sostenibilidad",
             description:
-              "Compromiso con el desarrollo sostenible y la protección del medio ambiente.",
+              "Promovemos prácticas que garantizan un futuro sostenible para las próximas generaciones.",
+            iconColor: "#4CAF50",
+            gradientColors: ["#4CAF50", "#496cb3"],
           },
           {
             title: "Innovación",
             description:
-              "Búsqueda constante de soluciones innovadoras y eficientes.",
+              "Buscamos constantemente nuevas soluciones para los desafíos ambientales actuales.",
+            iconColor: "#2196F3",
+            gradientColors: ["#2196F3", "#496cb3"],
           },
           {
-            title: "Excelencia",
+            title: "Responsabilidad",
             description:
-              "Máxima calidad en todos nuestros servicios y procesos.",
+              "Asumimos el compromiso de proteger y preservar nuestro entorno natural.",
+            iconColor: "#496cb3",
+            gradientColors: ["#8BC34A", "#496cb3"],
           },
         ],
       },
       team: {
-        title: "Nuestro Equipo",
+        overline: "NUESTRO EQUIPO",
+        title: "Expertos Comprometidos",
+        description:
+          "Nuestro equipo de profesionales trabaja incansablemente para crear un impacto positivo en el medio ambiente.",
       },
     },
     servicesPage: {
-      overline: "NUESTRAS SOLUCIONES",
-      title: "Servicios Ambientales Integrales",
+      overline: "NUESTROS SERVICIOS",
+      title: "Soluciones Ambientales Integrales",
       subtitle:
-        "Soluciones innovadoras y sostenibles para empresas comprometidas con el medio ambiente",
-      features: {
-        title: "Características principales",
-      },
+        "Ofrecemos una amplia gama de servicios especializados en gestión ambiental y desarrollo sostenible.",
       cta: {
-        title: "¿Necesitas una solución personalizada?",
+        title: "¿Necesitas una Solución Ambiental?",
         description:
-          "Nuestro equipo de expertos está listo para ayudarte a encontrar la mejor solución para tu empresa.",
+          "Contáctanos hoy mismo para discutir cómo podemos ayudarte a alcanzar tus objetivos de sostenibilidad.",
       },
     },
     blog: {
@@ -175,6 +190,9 @@ export const UI_TEXTS = {
         },
       },
       form: {
+        title: "Envíanos un mensaje",
+        description:
+          "Completa el formulario y nos pondremos en contacto contigo.",
         fields: {
           name: "Nombre",
           email: "Email",
@@ -216,6 +234,7 @@ export const UI_TEXTS = {
         "Gestión de Residuos",
         "Energías Renovables",
         "Estudios de Impacto",
+        "Educación Ambiental",
       ],
     },
     contact: {
@@ -348,23 +367,40 @@ export const SERVICES = [
 
 export const TEAM_MEMBERS = [
   {
-    name: "Ana García",
-    position: "Directora General",
+    name: "Ana Martínez",
+    position: "Directora de Proyectos Ambientales",
     description:
-      "Experta en gestión ambiental con más de 15 años de experiencia.",
-    image: "https://images.pexels.com/photos/5717641/pexels-photo-5717641.jpeg",
+      "Especialista en gestión ambiental con más de 10 años de experiencia en el sector.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "ana@example.com",
+    },
   },
   {
     name: "Carlos Rodríguez",
-    position: "Director Técnico",
-    description: "Ingeniero ambiental especializado en tratamiento de aguas.",
-    image: "https://images.pexels.com/photos/5397723/pexels-photo-5397723.jpeg",
+    position: "Consultor Senior de Sostenibilidad",
+    description:
+      "Experto en energías renovables y desarrollo sostenible con amplia experiencia internacional.",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "carlos@example.com",
+    },
   },
   {
-    name: "Laura Martínez",
-    position: "Consultora Senior",
-    description: "Especialista en gestión de residuos y economía circular.",
-    image: "https://images.pexels.com/photos/5717545/pexels-photo-5717545.jpeg",
+    name: "Laura Sánchez",
+    position: "Especialista en Impacto Ambiental",
+    description:
+      "Dedicada a la evaluación y mitigación de impactos ambientales en proyectos de gran escala.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "laura@example.com",
+    },
   },
 ];
 
