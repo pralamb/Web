@@ -1,5 +1,17 @@
-import { Grid, TextField, Button, Card, CardContent } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  TextField,
+  Button,
+  Stack,
+} from "@mui/material";
+import { motion } from "framer-motion";
 import { UI_TEXTS } from "../../config/constants";
+import SendIcon from "@mui/icons-material/Send";
+
+const { form } = UI_TEXTS.sections.contact;
 
 interface ContactFormProps {
   formData: {
@@ -15,77 +27,102 @@ interface ContactFormProps {
   ) => void;
 }
 
-const ContactForm = ({ formData, onSubmit, onChange }: ContactFormProps) => {
+export default function ContactForm({
+  formData,
+  onSubmit,
+  onChange,
+}: ContactFormProps) {
   return (
-    <Card component="form" onSubmit={onSubmit}>
-      <CardContent>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
+    <Card
+      component={motion.div}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      sx={{
+        background: "rgba(255, 255, 255, 0.05)",
+        backdropFilter: "blur(10px)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+      }}
+    >
+      <CardContent sx={{ p: 4 }}>
+        <Typography variant="h5" gutterBottom color="primary">
+          {form.title}
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
+          {form.description}
+        </Typography>
+
+        <Box component="form" onSubmit={onSubmit}>
+          <Stack spacing={3}>
             <TextField
-              required
               fullWidth
-              label={UI_TEXTS.sections.contact.form.fields.name}
+              label={form.fields.name}
               name="name"
               value={formData.name}
               onChange={onChange}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
+              variant="outlined"
               required
+            />
+            <TextField
               fullWidth
-              label={UI_TEXTS.sections.contact.form.fields.email}
+              label={form.fields.email}
               name="email"
               type="email"
               value={formData.email}
               onChange={onChange}
+              variant="outlined"
+              required
             />
-          </Grid>
-          <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
-              label={UI_TEXTS.sections.contact.form.fields.phone}
+              label={form.fields.phone}
               name="phone"
               value={formData.phone}
               onChange={onChange}
+              variant="outlined"
             />
-          </Grid>
-          <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
-              label={UI_TEXTS.sections.contact.form.fields.company}
+              label={form.fields.company}
               name="company"
               value={formData.company}
               onChange={onChange}
+              variant="outlined"
             />
-          </Grid>
-          <Grid item xs={12}>
             <TextField
-              required
               fullWidth
+              label={form.fields.message}
+              name="message"
               multiline
               rows={4}
-              label={UI_TEXTS.sections.contact.form.fields.message}
-              name="message"
               value={formData.message}
               onChange={onChange}
+              variant="outlined"
+              required
             />
-          </Grid>
-          <Grid item xs={12}>
             <Button
               type="submit"
               variant="contained"
-              color="primary"
               size="large"
-              fullWidth
+              endIcon={<SendIcon />}
+              sx={{
+                py: 1.5,
+                background: (theme) =>
+                  `linear-gradient(45deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.light} 100%)`,
+                "&:hover": {
+                  background: (theme) =>
+                    `linear-gradient(45deg, ${theme.palette.primary.light} 0%, ${theme.palette.primary.main} 100%)`,
+                  transform: "translateY(-2px)",
+                },
+                transition: "all 0.3s ease",
+              }}
             >
               {UI_TEXTS.buttons.sendMessage}
             </Button>
-          </Grid>
-        </Grid>
+          </Stack>
+        </Box>
       </CardContent>
     </Card>
   );
-};
-
-export default ContactForm;
+}

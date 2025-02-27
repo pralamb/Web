@@ -176,9 +176,10 @@ export const UI_TEXTS = {
       },
     },
     contact: {
-      title: "Contacto",
+      overline: "Contacto",
+      title: "¿Tienes alguna pregunta?",
       subtitle:
-        "Estamos aquí para ayudarte. Contáctanos y te responderemos lo antes posible.",
+        "Estamos aquí para ayudarte. Nuestro equipo de expertos está listo para asesorarte en cualquier proyecto ambiental.",
       formSuccess:
         "Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.",
       info: {
