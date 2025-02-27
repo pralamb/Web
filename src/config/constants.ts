@@ -129,8 +129,10 @@ export const UI_TEXTS = {
       },
     },
     servicesPage: {
-      title: "Nuestros Servicios",
-      subtitle: "Soluciones integrales para tu empresa",
+      overline: "NUESTRAS SOLUCIONES",
+      title: "Servicios Ambientales Integrales",
+      subtitle:
+        "Soluciones innovadoras y sostenibles para empresas comprometidas con el medio ambiente",
       features: {
         title: "Características principales",
       },
