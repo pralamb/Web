@@ -142,25 +142,18 @@ const Navbar = (props: Props) => {
           </Box>
 
           {/* Logo - Mobile */}
+
           <Box
             component={RouterLink}
             to="/"
             sx={{
-              flexGrow: 1,
+              mr: 4,
               display: { xs: "flex", md: "none" },
-              textDecoration: "none",
-              justifyContent: "center",
+              alignItems: "center",
+              height: "64px", // Ajusta esto según la altura de tu barra de navegación
             }}
           >
-            <Box
-              component="img"
-              src="/logo.webp"
-              alt="Logo"
-              sx={{
-                height: "40px",
-                width: "auto",
-              }}
-            />
+            <PralambLogo2 width={100} height={30} />
           </Box>
 
           {/* Desktop Menu */}
