@@ -1,4 +1,4 @@
-import { Box, Container, Typography, TextField, useTheme } from "@mui/material";
+import { Box, Typography, TextField, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { UI_TEXTS } from "../../config/constants";
 

@@ -101,8 +101,7 @@ const BlogGrid = ({ filteredPosts }: BlogGridProps) => {
                   sx={{ color: theme.palette.text.secondary }}
                 >
                   {new Date(post.date).toLocaleDateString(
-                    UI_TEXTS.sections.blog.date.locale,
-                    UI_TEXTS.sections.blog.date.options
+                    UI_TEXTS.sections.blog.date.locale
                   )}
                 </Typography>
               </Box>
@@ -134,7 +133,7 @@ const BlogGrid = ({ filteredPosts }: BlogGridProps) => {
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
                 component={RouterLink}
-                to={`${ROUTES.BLOG}/${post.id}`}
+                to={`${ROUTES.BLOG}`}
                 sx={{
                   py: 1.5,
                   px: 4,
