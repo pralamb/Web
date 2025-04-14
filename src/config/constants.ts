@@ -7,7 +7,7 @@ export const ROUTES = {
 };
 
 export const IMAGES = {
-  hero: "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg",
+  hero: '/images/fondo.jpeg',
   leafPattern: "/leaf-pattern.png",
 };
 

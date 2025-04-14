@@ -3,6 +3,7 @@ import HeroSection from "../components/home/HeroSection";
 import StatsSection from "../components/home/StatsSection";
 import BenefitsSection from "../components/home/BenefitsSection";
 import ServicesSection from "../components/home/ServicesSection";
+import { IMAGES } from "../config/constants";
 
 const Home = () => {
   const theme = useTheme();
@@ -28,8 +29,7 @@ const Home = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage:
-            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
+          backgroundImage: `url(${IMAGES.hero})`,
           backgroundSize: "500px",
           opacity: 0.03,
           zIndex: -1,
