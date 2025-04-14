@@ -1,215 +1,175 @@
-import { useState } from 'react'
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  TextField,
-  Button,
-  Card,
-  CardContent,
-  Alert,
-  Snackbar,
-} from '@mui/material'
-import { motion } from 'framer-motion'
-import EmailIcon from '@mui/icons-material/Email'
-import PhoneIcon from '@mui/icons-material/Phone'
-import LocationOnIcon from '@mui/icons-material/LocationOn'
-import { COMPANY_INFO, UI_TEXTS } from '../config/constants'
-
-const MotionBox = motion(Box)
+import { Box, Container, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
+import { UI_TEXTS } from "../config/constants";
+import ContactHeader from "../components/contact/ContactHeader";
+import ContactForm from "../components/contact/ContactForm";
+import ContactInfo from "../components/contact/ContactInfo";
+import { useState } from "react";
+import { Alert, Snackbar, Grid } from "@mui/material";
 
 const Contact = () => {
+  const theme = useTheme();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+  });
 
   const [snackbar, setSnackbar] = useState({
     open: false,
-    message: '',
-    severity: 'success' as 'success' | 'error',
-  })
+    message: "",
+    severity: "success" as "success" | "error",
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Aquí iría la lógica para enviar el formulario
-    console.log('Formulario enviado:', formData)
+    console.log("Formulario enviado:", formData);
     setSnackbar({
       open: true,
       message: UI_TEXTS.sections.contact.formSuccess,
-      severity: 'success',
-    })
+      severity: "success",
+    });
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      message: '',
-    })
-  }
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: "",
+    });
+  };
 
   const handleCloseSnackbar = () => {
-    setSnackbar((prev) => ({ ...prev, open: false }))
-  }
+    setSnackbar((prev) => ({ ...prev, open: false }));
+  };
 
   return (
-    <Container maxWidth="lg">
-      <MotionBox
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        sx={{ mb: 6 }}
-      >
-        <Typography variant="h2" color="primary" gutterBottom>
-          {UI_TEXTS.sections.contact.title}
-        </Typography>
-        <Typography variant="h5" color="text.secondary" paragraph>
-          {UI_TEXTS.sections.contact.subtitle}
-        </Typography>
-      </MotionBox>
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "100vh",
+        pt: { xs: 12, md: 16 },
+        pb: { xs: 8, md: 12 },
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: `linear-gradient(135deg, ${theme.colors.background}E6, ${theme.palette.primary.dark}80)`,
+          zIndex: -2,
+        },
+        "&::after": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage:
+            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
+          backgroundSize: "500px",
+          opacity: 0.03,
+          zIndex: -1,
+        },
+      }}
+    >
+      {/* Decorative Elements */}
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, -20, 0],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        sx={{
+          position: "fixed",
+          top: "10%",
+          right: "5%",
+          width: "300px",
+          height: "300px",
+          background: `radial-gradient(circle, ${theme.palette.primary.light}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(60px)",
+          zIndex: -1,
+        }}
+      />
 
-      <Grid container spacing={4}>
-        {/* Formulario de contacto */}
-        <Grid item xs={12} md={8}>
-          <Card component="form" onSubmit={handleSubmit}>
-            <CardContent>
-              <Grid container spacing={3}>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    required
-                    fullWidth
-                    label={UI_TEXTS.sections.contact.form.fields.name}
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    required
-                    fullWidth
-                    label={UI_TEXTS.sections.contact.form.fields.email}
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label={UI_TEXTS.sections.contact.form.fields.phone}
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    label={UI_TEXTS.sections.contact.form.fields.company}
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    fullWidth
-                    multiline
-                    rows={4}
-                    label={UI_TEXTS.sections.contact.form.fields.message}
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                    fullWidth
-                  >
-                    {UI_TEXTS.buttons.sendMessage}
-                  </Button>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, 20, 0],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+        sx={{
+          position: "fixed",
+          bottom: "20%",
+          left: "5%",
+          width: "250px",
+          height: "250px",
+          background: `radial-gradient(circle, ${theme.palette.secondary.main}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(50px)",
+          zIndex: -1,
+        }}
+      />
+
+      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
+        <ContactHeader />
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={8}>
+            <ContactForm
+              formData={formData}
+              onSubmit={handleSubmit}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <ContactInfo />
+          </Grid>
         </Grid>
 
-        {/* Información de contacto */}
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Typography variant="h5" color="primary" gutterBottom>
-                {UI_TEXTS.sections.contact.info.title}
-              </Typography>
-              
-              <Box sx={{ mt: 3 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <EmailIcon sx={{ mr: 2, color: 'primary.main' }} />
-                  <Typography variant="body1">
-                    {COMPANY_INFO.contact.email}
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <PhoneIcon sx={{ mr: 2, color: 'primary.main' }} />
-                  <Typography variant="body1">
-                    {COMPANY_INFO.contact.phone}
-                  </Typography>
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <LocationOnIcon sx={{ mr: 2, color: 'primary.main' }} />
-                  <Typography variant="body1">
-                    {COMPANY_INFO.contact.address}
-                  </Typography>
-                </Box>
-              </Box>
-
-              <Typography variant="body1" sx={{ mt: 4 }}>
-                {UI_TEXTS.sections.contact.info.schedule.title}
-                <br />
-                {UI_TEXTS.sections.contact.info.schedule.weekdays}
-                <br />
-                {UI_TEXTS.sections.contact.info.schedule.saturday}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={6000}
-        onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Alert
+        <Snackbar
+          open={snackbar.open}
+          autoHideDuration={6000}
           onClose={handleCloseSnackbar}
-          severity={snackbar.severity}
-          sx={{ width: '100%' }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
         >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
-    </Container>
-  )
-}
+          <Alert
+            onClose={handleCloseSnackbar}
+            severity={snackbar.severity}
+            sx={{ width: "100%" }}
+          >
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
+      </Container>
+    </Box>
+  );
+};
 
-export default Contact 
+export default Contact;

@@ -1,91 +1,102 @@
-import { Box, Container, Grid, Typography, Card, CardContent } from '@mui/material'
-import { motion } from 'framer-motion'
-import { COMPANY_INFO, UI_TEXTS, TEAM_MEMBERS } from '../config/constants'
-
-const MotionBox = motion(Box)
+import { Box, Container, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
+import HistorySection from "../components/about/HistorySection";
+import ValuesSection from "../components/about/ValuesSection";
+import TeamSection from "../components/about/TeamSection";
 
 const About = () => {
+  const theme = useTheme();
+
   return (
-    <Container maxWidth="lg">
-      {/* Sección de Historia */}
-      <MotionBox
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Typography variant="h2" color="primary" gutterBottom>
-          {UI_TEXTS.sections.about.title}
-        </Typography>
-        <Typography variant="h5" color="text.secondary" paragraph>
-          {COMPANY_INFO.slogan}
-        </Typography>
-        <Typography variant="body1" paragraph>
-          {UI_TEXTS.sections.about.description}
-        </Typography>
-      </MotionBox>
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "100vh",
+        pt: { xs: 12, md: 16 },
+        pb: { xs: 8, md: 12 },
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: `linear-gradient(135deg, ${theme.colors.background}E6, ${theme.palette.primary.dark}80)`,
+          zIndex: -2,
+        },
+        "&::after": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage:
+            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
+          backgroundSize: "500px",
+          opacity: 0.03,
+          zIndex: -1,
+        },
+      }}
+    >
+      {/* Decorative Elements */}
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, -20, 0],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        sx={{
+          position: "fixed",
+          top: "10%",
+          right: "5%",
+          width: "300px",
+          height: "300px",
+          background: `radial-gradient(circle, ${theme.palette.primary.light}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(60px)",
+          zIndex: -1,
+        }}
+      />
 
-      {/* Sección de Valores */}
-      <Box sx={{ my: 8 }}>
-        <Typography variant="h3" color="primary" gutterBottom align="center">
-          {UI_TEXTS.sections.about.values.title}
-        </Typography>
-        <Grid container spacing={4} sx={{ mt: 2 }}>
-          {UI_TEXTS.sections.about.values.items.map((value, index) => (
-            <Grid item xs={12} md={4} key={value.title}>
-              <MotionBox
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardContent>
-                    <Typography variant="h5" component="h3" gutterBottom color="primary">
-                      {value.title}
-                    </Typography>
-                    <Typography variant="body1" color="text.secondary">
-                      {value.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </MotionBox>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, 20, 0],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+        sx={{
+          position: "fixed",
+          bottom: "20%",
+          left: "5%",
+          width: "250px",
+          height: "250px",
+          background: `radial-gradient(circle, ${theme.palette.secondary.main}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(50px)",
+          zIndex: -1,
+        }}
+      />
 
-      {/* Sección del Equipo */}
-      <Box sx={{ my: 8 }}>
-        <Typography variant="h3" color="primary" gutterBottom align="center">
-          {UI_TEXTS.sections.about.team.title}
-        </Typography>
-        <Grid container spacing={4} sx={{ mt: 2 }}>
-          {TEAM_MEMBERS.map((member, index) => (
-            <Grid item xs={12} md={4} key={member.name}>
-              <MotionBox
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardContent>
-                    <Typography variant="h5" component="h3" gutterBottom color="primary">
-                      {member.name}
-                    </Typography>
-                    <Typography variant="subtitle1" color="primary.main" gutterBottom>
-                      {member.position}
-                    </Typography>
-                    <Typography variant="body1" color="text.secondary">
-                      {member.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </MotionBox>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </Container>
-  )
-}
+      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
+        <HistorySection />
+        <ValuesSection />
+        <TeamSection />
+      </Container>
+    </Box>
+  );
+};
 
-export default About 
+export default About;

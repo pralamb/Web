@@ -1,118 +1,110 @@
-import { useState } from 'react'
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-  CardActions,
-  Button,
-  Chip,
-  TextField,
-} from '@mui/material'
-import { motion } from 'framer-motion'
-import { BLOG_POSTS, UI_TEXTS } from '../config/constants'
-
-const MotionBox = motion(Box)
-const MotionCard = motion(Card)
+import { Box, Container, useTheme } from "@mui/material";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import BlogHeader from "../components/blog/BlogHeader";
+import BlogGrid from "../components/blog/BlogGrid";
+import { BLOG_POSTS } from "../config/constants";
 
 const Blog = () => {
-  const [searchTerm, setSearchTerm] = useState('')
+  const theme = useTheme();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredPosts = BLOG_POSTS.filter(
     (post) =>
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.category.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  );
 
   return (
-    <Container maxWidth="lg">
-      {/* Header */}
-      <MotionBox
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        sx={{ mb: 6 }}
-      >
-        <Typography variant="h2" color="primary" gutterBottom>
-          {UI_TEXTS.sections.blog.title}
-        </Typography>
-        <Typography variant="h5" color="text.secondary" paragraph>
-          {UI_TEXTS.sections.blog.subtitle}
-        </Typography>
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "100vh",
+        pt: { xs: 12, md: 16 },
+        pb: { xs: 8, md: 12 },
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: `linear-gradient(135deg, ${theme.colors.background}E6, ${theme.palette.primary.dark}80)`,
+          zIndex: -2,
+        },
+        "&::after": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage:
+            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
+          backgroundSize: "500px",
+          opacity: 0.03,
+          zIndex: -1,
+        },
+      }}
+    >
+      {/* Decorative Elements */}
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, -20, 0],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        sx={{
+          position: "fixed",
+          top: "10%",
+          right: "5%",
+          width: "300px",
+          height: "300px",
+          background: `radial-gradient(circle, ${theme.palette.primary.light}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(60px)",
+          zIndex: -1,
+        }}
+      />
 
-        {/* Buscador */}
-        <TextField
-          fullWidth
-          variant="outlined"
-          placeholder={UI_TEXTS.sections.blog.search.placeholder}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          sx={{ mt: 2 }}
-        />
-      </MotionBox>
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, 20, 0],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+        sx={{
+          position: "fixed",
+          bottom: "20%",
+          left: "5%",
+          width: "250px",
+          height: "250px",
+          background: `radial-gradient(circle, ${theme.palette.secondary.main}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(50px)",
+          zIndex: -1,
+        }}
+      />
 
-      {/* Grid de Posts */}
-      <Grid container spacing={4}>
-        {filteredPosts.map((post, index) => (
-          <Grid item xs={12} md={6} key={post.id}>
-            <MotionCard
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-            >
-              <CardMedia
-                component="img"
-                height="200"
-                image={post.image}
-                alt={post.title}
-                sx={{ objectFit: 'cover' }}
-              />
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Box sx={{ mb: 2 }}>
-                  <Chip
-                    label={post.category}
-                    color="primary"
-                    size="small"
-                    sx={{ mr: 1 }}
-                  />
-                  <Typography variant="caption" color="text.secondary">
-                    {new Date(post.date).toLocaleDateString(
-                      UI_TEXTS.sections.blog.date.locale,
-                      UI_TEXTS.sections.blog.date.options
-                    )}
-                  </Typography>
-                </Box>
-                <Typography variant="h5" component="h2" gutterBottom>
-                  {post.title}
-                </Typography>
-                <Typography variant="body1" color="text.secondary" paragraph>
-                  {post.excerpt}
-                </Typography>
-              </CardContent>
-              <CardActions sx={{ p: 2 }}>
-                <Button variant="outlined" color="primary" fullWidth>
-                  {UI_TEXTS.buttons.readMore}
-                </Button>
-              </CardActions>
-            </MotionCard>
-          </Grid>
-        ))}
-      </Grid>
+      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
+        <BlogHeader searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+        <BlogGrid filteredPosts={filteredPosts} />
+      </Container>
+    </Box>
+  );
+};
 
-      {/* Mensaje si no hay resultados */}
-      {filteredPosts.length === 0 && (
-        <Box sx={{ textAlign: 'center', my: 4 }}>
-          <Typography variant="h6" color="text.secondary">
-            {UI_TEXTS.sections.blog.noResults}
-          </Typography>
-        </Box>
-      )}
-    </Container>
-  )
-}
-
-export default Blog 
+export default Blog;

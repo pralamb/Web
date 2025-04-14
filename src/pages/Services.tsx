@@ -1,109 +1,104 @@
-import { Box, Container, Grid, Typography, Card, CardContent, CardActions, Button } from '@mui/material'
-import { motion } from 'framer-motion'
-import { Link as RouterLink } from 'react-router-dom'
-import { SERVICES, ROUTES, UI_TEXTS } from '../config/constants'
-
-const MotionBox = motion(Box)
+import { Box, Container, useTheme } from "@mui/material";
+import ServiceHeader from "../components/services/ServiceHeader";
+import ServiceGrid from "../components/services/ServiceGrid";
+import ServiceCTA from "../components/services/ServiceCTA";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Services = () => {
+  const theme = useTheme();
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
-    <Container maxWidth="lg">
-      <MotionBox
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        sx={{ mb: 6 }}
-      >
-        <Typography variant="h2" color="primary" gutterBottom>
-          {UI_TEXTS.sections.services.title}
-        </Typography>
-        <Typography variant="h5" color="text.secondary" paragraph>
-          {UI_TEXTS.sections.services.subtitle}
-        </Typography>
-      </MotionBox>
-
-      <Grid container spacing={4}>
-        {SERVICES.map((service, index) => (
-          <Grid item xs={12} md={6} key={service.id}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h4" component="h2" gutterBottom color="primary">
-                    {service.title}
-                  </Typography>
-                  <Typography variant="body1" paragraph color="text.secondary">
-                    {service.description}
-                  </Typography>
-                  <Typography variant="h6" gutterBottom color="primary" sx={{ mt: 2 }}>
-                    {UI_TEXTS.sections.services.features.title}
-                  </Typography>
-                  <Box component="ul" sx={{ pl: 2 }}>
-                    {service.features.map((feature, i) => (
-                      <Typography
-                        component="li"
-                        key={i}
-                        variant="body1"
-                        color="text.secondary"
-                        sx={{ mb: 1 }}
-                      >
-                        {feature}
-                      </Typography>
-                    ))}
-                  </Box>
-                </CardContent>
-                <CardActions sx={{ p: 2 }}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    component={RouterLink}
-                    to={ROUTES.CONTACT}
-                    fullWidth
-                  >
-                    {UI_TEXTS.buttons.contact}
-                  </Button>
-                </CardActions>
-              </Card>
-            </MotionBox>
-          </Grid>
-        ))}
-      </Grid>
-
-      {/* Sección de CTA */}
-      <MotionBox
-        sx={{
-          mt: 8,
-          p: 4,
-          bgcolor: 'background.paper',
-          borderRadius: 2,
-          textAlign: 'center',
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "100vh",
+        pt: { xs: 12, md: 16 },
+        pb: { xs: 8, md: 12 },
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: `linear-gradient(135deg, ${theme.colors.background}E6, ${theme.palette.primary.dark}80)`,
+          zIndex: -2,
+        },
+        "&::after": {
+          content: '""',
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage:
+            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
+          backgroundSize: "500px",
+          opacity: 0.03,
+          zIndex: -1,
+        },
+      }}
+    >
+      {/* Decorative Elements */}
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, -20, 0],
+          opacity: [0.3, 0.5, 0.3],
         }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        <Typography variant="h4" color="primary" gutterBottom>
-          {UI_TEXTS.sections.services.cta.title}
-        </Typography>
-        <Typography variant="body1" color="text.secondary" paragraph>
-          {UI_TEXTS.sections.services.cta.description}
-        </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          component={RouterLink}
-          to={ROUTES.CONTACT}
-          sx={{ mt: 2 }}
-        >
-          {UI_TEXTS.buttons.contact}
-        </Button>
-      </MotionBox>
-    </Container>
-  )
-}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        sx={{
+          position: "fixed",
+          top: "10%",
+          right: "5%",
+          width: "300px",
+          height: "300px",
+          background: `radial-gradient(circle, ${theme.palette.primary.light}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(60px)",
+          zIndex: -1,
+        }}
+      />
 
-export default Services 
+      <Box
+        component={motion.div}
+        animate={{
+          y: [0, 20, 0],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+        sx={{
+          position: "fixed",
+          bottom: "20%",
+          left: "5%",
+          width: "250px",
+          height: "250px",
+          background: `radial-gradient(circle, ${theme.palette.secondary.main}40 0%, transparent 70%)`,
+          borderRadius: "50%",
+          filter: "blur(50px)",
+          zIndex: -1,
+        }}
+      />
+
+      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
+        <ServiceHeader />
+        <ServiceGrid />
+        <ServiceCTA />
+      </Container>
+    </Box>
+  );
+};
+
+export default Services;
