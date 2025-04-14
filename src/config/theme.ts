@@ -1,7 +1,5 @@
 import {
   createTheme,
-  Theme as MuiTheme,
-  ThemeOptions,
 } from "@mui/material/styles";
 
 interface CustomThemeColors {
