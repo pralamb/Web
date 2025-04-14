@@ -2,12 +2,11 @@ import { Box, Container, useTheme } from "@mui/material";
 import ServiceHeader from "../components/services/ServiceHeader";
 import ServiceGrid from "../components/services/ServiceGrid";
 import ServiceCTA from "../components/services/ServiceCTA";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 const Services = () => {
   const theme = useTheme();
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <Box
