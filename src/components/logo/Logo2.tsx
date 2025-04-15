@@ -23,29 +23,29 @@ export default function PralambLogo2({
           Pralamb
         </text>
         <path
-          d="M185 25C195 25 200 35 200 45C200 52.5 195 55 190 55C180 55 170 45 170 37.5C170 30 175 27.5 180 27.5C182.5 27.5 185 30 185 32.5"
-          fill="#B1D8B7"
+          d="M135 5C145 5 150 15 150 25C150 32.5 145 35 140 35C130 35 120 25 120 17.5C120 10 125 7.5 130 7.5C132.5 7.5 135 10 135 12.5"
+          fill="#8CA67D"
         />
         <path
-          d="M185 32.5C185 37.5 185 47.5 185 52.5"
+          d="M135 12.5C135 17.5 135 27.5 135 32.5"
           stroke="white"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
         <path
-          d="M180 37.5L190 37.5"
+          d="M130 17.5L140 17.5"
           stroke="white"
           strokeWidth="1"
           strokeLinecap="round"
         />
         <path
-          d="M177.5 42.5L192.5 42.5"
+          d="M127.5 22.5L142.5 22.5"
           stroke="white"
           strokeWidth="1"
           strokeLinecap="round"
         />
         <path
-          d="M180 47.5L190 47.5"
+          d="M130 27.5L140 27.5"
           stroke="white"
           strokeWidth="1"
           strokeLinecap="round"
@@ -55,7 +55,7 @@ export default function PralambLogo2({
           y1="70"
           x2="240"
           y2="70"
-          stroke="#B1D8B7"
+          stroke="#8CA67D"
           strokeWidth="3"
         />
       </svg>
