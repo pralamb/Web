@@ -164,7 +164,7 @@ const ServiceCTA = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             sx={{
-              backgroundImage: "url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg')",
+              backgroundImage: "url('https://images.pexels.com/photos/6894103/pexels-photo-6894103.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               borderRadius: "20px",
@@ -180,7 +180,7 @@ const ServiceCTA = () => {
                 width: "100%",
                 height: "100%",
                 background: "rgba(0,0,0,0.2)",
-                backdropFilter: "blur(2px)",
+                backdropFilter: "blur(1px)",
               }
             }}
           />

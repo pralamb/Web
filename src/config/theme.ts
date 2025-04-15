@@ -27,7 +27,7 @@ declare module "@mui/material/styles" {
 
 export const theme = {
   colors: {
-    primary: "#4CAF50", // Verde principal
+    primary: "#80b549", // Verde principal
     secondary: "#8BC34A", // Verde claro
     accent: "#2196F3", // Azul para acentos
     background: "#1a2f38", // Fondo oscuro

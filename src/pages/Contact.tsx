@@ -6,6 +6,7 @@ import ContactForm from "../components/contact/ContactForm";
 import ContactInfo from "../components/contact/ContactInfo";
 import { useState } from "react";
 import { Alert, Snackbar, Grid } from "@mui/material";
+import { IMAGES } from "../config/constants";
 
 const Contact = () => {
   const theme = useTheme();
@@ -80,8 +81,7 @@ const Contact = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage:
-            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
+          backgroundImage: `url(${IMAGES.hero})`,
           backgroundSize: "500px",
           opacity: 0.03,
           zIndex: -1,

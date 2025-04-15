@@ -2,7 +2,6 @@ import { Box, Container, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import HistorySection from "../components/about/HistorySection";
 import ValuesSection from "../components/about/ValuesSection";
-import TeamSection from "../components/about/TeamSection";
 
 const About = () => {
   const theme = useTheme();
@@ -93,7 +92,6 @@ const About = () => {
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
         <HistorySection />
         <ValuesSection />
-        <TeamSection />
       </Container>
     </Box>
   );

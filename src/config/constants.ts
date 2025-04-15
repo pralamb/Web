@@ -259,37 +259,7 @@ export const UI_TEXTS = {
   },
 };
 
-export const THEME = {
-  colors: {
-    primary: "#4A5D4B",
-    primaryDark: "#2C3E2D",
-    primaryDarker: "#1F2B1F",
-    secondary: "#A7B8A1",
-    accent: "#8FA891",
-    background: {
-      light: "#ffffff",
-      dark: "linear-gradient(135deg, #2C3E2D 0%, #1F2B1F 100%)",
-    },
-    text: {
-      light: "#ffffff",
-      dark: "#4A5D4B",
-      muted: "rgba(255,255,255,0.7)",
-    },
-  },
-  gradients: {
-    primary: "linear-gradient(45deg, #4A5D4B 0%, #8FA891 100%)",
-    primaryHover: "linear-gradient(45deg, #8FA891 0%, #4A5D4B 100%)",
-    background: "linear-gradient(135deg, #2C3E2D 0%, #1F2B1F 100%)",
-    text: "linear-gradient(90deg, #ffffff 0%, #A7B8A1 100%)",
-  },
-  effects: {
-    glassmorphism: {
-      backdropFilter: "blur(10px)",
-      background: "rgba(255, 255, 255, 0.05)",
-      border: "1px solid rgba(255, 255, 255, 0.1)",
-    },
-  },
-};
+
 
 export const COMPANY_INFO = {
   name: "Pralamb",
@@ -297,8 +267,8 @@ export const COMPANY_INFO = {
   description:
     "Somos expertos en consultoría ambiental, ofreciendo soluciones integrales para empresas comprometidas con la sostenibilidad.",
   contact: {
-    email: "contacto@pralamb.com",
-    phone: "+34 900 123 456",
+    email: "proyectos@pralamb.com",
+    phone: "+57 321 433380",
     address: "Calle Principal 123, 28001 Madrid",
     schedule: {
       weekdays: "9:00 - 18:00",
