@@ -7,6 +7,8 @@ import {
   CardMedia,
   Button,
   useTheme,
+  Divider,
+  Chip,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { Link as RouterLink } from "react-router-dom";
@@ -21,11 +23,18 @@ const ServiceGrid = () => {
   return (
     <Grid container spacing={4} sx={{ mb: { xs: 8, md: 12 } }}>
       {SERVICES.map((service, index) => (
-        <Grid item xs={12} md={6} key={service.id}>
+        <Grid 
+          item 
+          xs={12} 
+          md={6} 
+          lg={4} 
+          key={service.id}
+          id={service.id}
+        >
           <MotionCard
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
             sx={{
               height: "100%",
               display: "flex",
@@ -49,7 +58,7 @@ const ServiceGrid = () => {
               },
             }}
           >
-            <Box sx={{ position: "relative", paddingTop: "60%" }}>
+            <Box sx={{ position: "relative", paddingTop: "55%" }}>
               <CardMedia
                 className="card-media"
                 component="img"
@@ -78,16 +87,29 @@ const ServiceGrid = () => {
                   transition: "opacity 0.3s ease-in-out",
                 }}
               />
+              <Chip
+                label={index < 4 ? "Popular" : ""}
+                sx={{
+                  display: index < 4 ? "flex" : "none",
+                  position: "absolute",
+                  top: 16,
+                  right: 16,
+                  bgcolor: theme.palette.primary.main,
+                  color: "white",
+                  fontWeight: "bold",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+                }}
+              />
             </Box>
             <CardContent
               sx={{
-                p: 4,
+                p: 3,
                 flexGrow: 1,
                 background: "rgba(255, 255, 255, 0.02)",
               }}
             >
               <Typography
-                variant="h4"
+                variant="h5"
                 sx={{
                   fontWeight: 700,
                   mb: 2,
@@ -102,33 +124,36 @@ const ServiceGrid = () => {
                 variant="body1"
                 sx={{
                   color: theme.palette.text.secondary,
-                  mb: 4,
-                  lineHeight: 1.7,
+                  mb: 3,
+                  lineHeight: 1.6,
+                  fontSize: "0.95rem",
                 }}
               >
                 {service.description}
               </Typography>
 
+              <Divider sx={{ mb: 2, opacity: 0.1 }} />
+
               <Typography
-                variant="h6"
+                variant="subtitle1"
                 sx={{
                   color: theme.palette.primary.light,
-                  mb: 2,
+                  mb: 1.5,
                   fontWeight: 600,
                 }}
               >
-                Características:
+                Incluye:
               </Typography>
-              <Box component="ul" sx={{ pl: 2, mb: 4 }}>
+              <Box component="ul" sx={{ pl: 2, mb: 3, mt: 0 }}>
                 {service.features.map((feature, i) => (
                   <Typography
                     component="li"
                     key={i}
-                    variant="body1"
+                    variant="body2"
                     sx={{
                       color: theme.palette.text.secondary,
-                      mb: 1,
-                      lineHeight: 1.7,
+                      mb: 0.5,
+                      lineHeight: 1.6,
                     }}
                   >
                     {feature}
@@ -140,15 +165,15 @@ const ServiceGrid = () => {
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
                 component={RouterLink}
-                to={ROUTES.CONTACT}
+                to={`${ROUTES.CONTACT}?service=${service.id}`}
                 sx={{
                   mt: "auto",
-                  py: 1.5,
-                  px: 4,
+                  py: 1,
+                  px: 3,
                   backgroundColor: theme.palette.primary.main,
                   color: theme.palette.common.white,
                   borderRadius: theme.shape.borderRadius * 4,
-                  fontSize: "1rem",
+                  fontSize: "0.9rem",
                   fontWeight: 600,
                   textTransform: "none",
                   boxShadow: theme.shadows[4],

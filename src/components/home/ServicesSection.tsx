@@ -13,6 +13,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { SERVICES } from "../../config/constants";
 import { useInView } from "react-intersection-observer";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link as RouterLink } from "react-router-dom";
 
 const MotionCard = motion.create(Card);
 const MotionBox = motion.create(Box);
@@ -101,14 +102,14 @@ const ServicesSection = () => {
               lineHeight: 1.8,
             }}
           >
-            Soluciones innovadoras y sostenibles para proteger nuestro planeta y
-            construir un futuro más verde
+            Soluciones profesionales y especializadas para la gestión ambiental empresarial
+            y el cumplimiento normativo
           </Typography>
         </MotionBox>
 
         <Grid container spacing={4}>
-          {SERVICES.slice(0, 3).map((service, index) => (
-            <Grid item xs={12} md={4} key={service.id}>
+          {SERVICES.slice(0, 4).map((service, index) => (
+            <Grid item xs={12} md={6} lg={3} key={service.id}>
               <MotionCard
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -195,6 +196,8 @@ const ServicesSection = () => {
                     {service.description}
                   </Typography>
                   <Button
+                    component={RouterLink}
+                    to={`/services#${service.id}`}
                     variant="text"
                     endIcon={<ArrowForwardIcon />}
                     sx={{
@@ -220,6 +223,35 @@ const ServicesSection = () => {
             </Grid>
           ))}
         </Grid>
+
+        <Box sx={{ textAlign: 'center', mt: 8 }}>
+          <Button
+            component={RouterLink}
+            to="/services"
+            variant="outlined"
+            size="large"
+            sx={{
+              borderWidth: 2,
+              borderColor: theme.palette.primary.light,
+              color: theme.palette.primary.light,
+              fontWeight: 600,
+              borderRadius: '50px',
+              px: 4,
+              py: 1.5,
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                borderWidth: 2,
+                backgroundColor: theme.palette.primary.light,
+                color: theme.palette.common.white,
+                borderColor: theme.palette.primary.light,
+                transform: 'translateY(-5px)',
+                boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
+              }
+            }}
+          >
+            Ver Todos Los Servicios
+          </Button>
+        </Box>
 
         {/* Decorative Elements */}
         <Box

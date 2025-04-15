@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme, Chip, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import { UI_TEXTS } from "../../config/constants";
 
@@ -44,7 +44,7 @@ const ServiceHeader = () => {
           textShadow: "0 2px 10px rgba(0,0,0,0.1)",
         }}
       >
-        {UI_TEXTS.sections.servicesPage.title}
+        Servicios de Gestión Ambiental
       </Typography>
       <Typography
         variant="h5"
@@ -52,7 +52,7 @@ const ServiceHeader = () => {
           color: theme.palette.text.secondary,
           maxWidth: "800px",
           mx: "auto",
-          mb: 6,
+          mb: 4,
           fontSize: { xs: "1.1rem", md: "1.3rem" },
           lineHeight: 1.8,
         }}
@@ -61,8 +61,78 @@ const ServiceHeader = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        {UI_TEXTS.sections.servicesPage.subtitle}
+        Ofrecemos soluciones profesionales para la gestión ambiental empresarial, cumplimiento normativo y asesoría en todos los aspectos relacionados con la sostenibilidad de su organización.
       </Typography>
+      
+      <Stack 
+        direction="row" 
+        spacing={1} 
+        justifyContent="center" 
+        flexWrap="wrap"
+        sx={{ mb: 6 }}
+      >
+        <Box 
+          component={motion.div}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          sx={{ 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            gap: 1, 
+            justifyContent: 'center' 
+          }}
+        >
+          <Chip 
+            label="Sistemas SGA" 
+            sx={{ 
+              bgcolor: 'rgba(255,255,255,0.1)',
+              color: theme.palette.primary.light,
+              mb: 1
+            }} 
+          />
+          <Chip 
+            label="Residuos" 
+            sx={{ 
+              bgcolor: 'rgba(255,255,255,0.1)',
+              color: theme.palette.primary.light,
+              mb: 1
+            }} 
+          />
+          <Chip 
+            label="Instrumentos Ambientales" 
+            sx={{ 
+              bgcolor: 'rgba(255,255,255,0.1)',
+              color: theme.palette.primary.light,
+              mb: 1
+            }} 
+          />
+          <Chip 
+            label="Trámites" 
+            sx={{ 
+              bgcolor: 'rgba(255,255,255,0.1)',
+              color: theme.palette.primary.light,
+              mb: 1
+            }} 
+          />
+          <Chip 
+            label="Reportes" 
+            sx={{ 
+              bgcolor: 'rgba(255,255,255,0.1)',
+              color: theme.palette.primary.light,
+              mb: 1
+            }} 
+          />
+          <Chip 
+            label="Beneficios Tributarios" 
+            sx={{ 
+              bgcolor: 'rgba(255,255,255,0.1)',
+              color: theme.palette.primary.light,
+              mb: 1
+            }} 
+          />
+        </Box>
+      </Stack>
 
       {/* Decorative Line */}
       <Box

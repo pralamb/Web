@@ -147,14 +147,14 @@ export const UI_TEXTS = {
       },
     },
     servicesPage: {
-      overline: "NUESTROS SERVICIOS",
-      title: "Soluciones Ambientales Integrales",
+      overline: "SERVICIOS PROFESIONALES",
+      title: "Soluciones Ambientales Empresariales",
       subtitle:
-        "Ofrecemos una amplia gama de servicios especializados en gestión ambiental y desarrollo sostenible.",
+        "Ofrecemos servicios especializados en gestión ambiental, cumplimiento normativo, trámites y asesoría integral para su empresa.",
       cta: {
-        title: "¿Necesitas una Solución Ambiental?",
+        title: "¿Necesita asesoría ambiental profesional?",
         description:
-          "Contáctanos hoy mismo para discutir cómo podemos ayudarte a alcanzar tus objetivos de sostenibilidad.",
+          "Nuestro equipo de expertos está listo para ayudarle a cumplir con la normatividad ambiental y optimizar sus procesos.",
       },
     },
     blog: {
@@ -233,11 +233,11 @@ export const UI_TEXTS = {
     services: {
       title: "Servicios",
       items: [
-        "Consultoría Ambiental",
+        "Gestión Ambiental",
         "Gestión de Residuos",
-        "Energías Renovables",
-        "Estudios de Impacto",
-        "Educación Ambiental",
+        "Instrumentos Ambientales",
+        "Trámites Ambientales",
+        "Reportes Ambientales",
       ],
     },
     contact: {
@@ -314,56 +314,107 @@ export const COMPANY_INFO = {
 
 export const SERVICES = [
   {
-    id: "water-treatment",
-    title: "Tratamiento de Aguas",
+    id: "environmental-management",
+    title: "Gestión Ambiental",
     description:
-      "Soluciones integrales para el tratamiento y gestión eficiente del agua.",
-    image:
-      "https://images.pexels.com/photos/15702931/pexels-photo-15702931/free-photo-of-hot-springs-and-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Implementación de Sistemas de Gestión Ambiental (SGA), herramientas de gestión y auditoría interna.",
+    image: "https://images.pexels.com/photos/5426403/pexels-photo-5426403.jpeg",
     features: [
-      "Análisis y diagnóstico de sistemas de tratamiento",
-      "Diseño de plantas de tratamiento",
-      "Optimización de procesos",
-      "Monitoreo y control de calidad",
+      "Sistemas de Gestión Ambiental",
+      "Herramientas de gestión",
+      "Auditoría interna",
+      "Cumplimiento normativo",
     ],
   },
   {
     id: "waste-management",
     title: "Gestión de Residuos",
     description:
-      "Servicios especializados en la gestión y tratamiento de residuos industriales.",
+      "Planes de Gestión Integral de Residuos Sólidos (PGIRS), RESPEL, RCDs, aprovechables y gestión de envases/empaques.",
     image: "https://images.pexels.com/photos/2682462/pexels-photo-2682462.jpeg",
     features: [
-      "Gestión integral de residuos",
-      "Planes de minimización",
-      "Valorización de residuos",
-      "Cumplimiento normativo",
+      "Planes de Gestión Integral (PGIRS)",
+      "Residuos peligrosos (RESPEL)",
+      "Residuos de construcción y demolición",
+      "Aprovechamiento y gestión de envases",
     ],
   },
   {
-    id: "environmental-consulting",
-    title: "Consultoría Ambiental",
+    id: "environmental-instruments",
+    title: "Instrumentos Ambientales",
     description:
-      "Asesoramiento experto en normativa y gestión ambiental empresarial.",
-    image: "https://images.pexels.com/photos/5324947/pexels-photo-5324947.jpeg",
+      "Desarrollo e implementación de instrumentos como EIA, PMA, PUEAA, PGRV y otros requeridos por la normatividad.",
+    image: "https://media.istockphoto.com/id/1439233527/photo/light-bulb-on-green-background-ecological-technology-save-earth-concept.jpg?s=2048x2048&w=is&k=20&c=f-TOyGjPFE06wPfJrkFLjoHwzfBfhoa441y-dqPL4CI=",
     features: [
-      "Auditorías ambientales",
-      "Estudios de impacto ambiental",
-      "Sistemas de gestión ambiental",
-      "Asesoría legal ambiental",
+      "Estudios de Impacto Ambiental (EIA)",
+      "Planes de Manejo Ambiental (PMA)",
+      "Programa Uso Eficiente de Agua (PUEAA)",
+      "Planes de Gestión del Riesgo de Vertimientos",
     ],
   },
   {
-    id: "energy-efficiency",
-    title: "Eficiencia Energética",
+    id: "chemical-substances",
+    title: "Gestión de Sustancias Químicas",
     description:
-      "Optimización del consumo energético y soluciones sostenibles.",
-    image: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg",
+      "Consolidación y gestión de sustancias químicas, implementación del Sistema Globalmente Armonizado (SGA).",
+    image: "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg",
     features: [
-      "Auditorías energéticas",
-      "Optimización de consumo",
-      "Implementación de energías renovables",
-      "Certificación energética",
+      "Inventario y gestión de sustancias químicas",
+      "Implementación del SGA",
+      "Hojas de seguridad",
+      "Gestión de riesgos químicos",
+    ],
+  },
+  {
+    id: "environmental-procedures",
+    title: "Trámites Ambientales",
+    description:
+      "Preparación de documentos para permisos, concesiones y registros ante autoridades ambientales.",
+    image: "https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg",
+    features: [
+      "Documentación para permisos ambientales",
+      "Gestión de concesiones",
+      "Registros ambientales",
+      "Acompañamiento en procesos legales",
+    ],
+  },
+  {
+    id: "tax-instruments",
+    title: "Instrumentos Tributarios",
+    description:
+      "Aplicación de beneficios tributarios (IVA, Renta) relacionados con inversiones y proyectos ambientales.",
+    image: "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg",
+    features: [
+      "Beneficios tributarios en IVA",
+      "Beneficios tributarios en Renta",
+      "Documentación para aplicación",
+      "Asesoría en inversiones ambientales",
+    ],
+  },
+  {
+    id: "environmental-reports",
+    title: "Reportes Ambientales",
+    description:
+      "Elaboración y presentación de Informes de Cumplimiento Ambiental (ICA), RUA, RESPEL, PCB's, entre otros.",
+    image: "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
+    features: [
+      "Informes de Cumplimiento Ambiental (ICA)",
+      "Registro Único Ambiental (RUA)",
+      "Reportes de residuos peligrosos",
+      "Reportes de PCB's",
+    ],
+  },
+  {
+    id: "sanction-process",
+    title: "Proceso Sancionatorio",
+    description:
+      "Revisión de requerimientos, elaboración de respuestas, documentación de evidencias y planes de acción.",
+    image: "https://images.pexels.com/photos/5668481/pexels-photo-5668481.jpeg",
+    features: [
+      "Revisión de requerimientos legales",
+      "Elaboración de respuestas",
+      "Documentación de evidencias",
+      "Desarrollo de planes de acción",
     ],
   },
 ];
