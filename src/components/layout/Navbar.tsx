@@ -21,7 +21,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { UI_TEXTS } from "../../config/constants";
-import PralambLogo2 from "../logo/Logo2";
+import logo from "../../assets/logo.webp";
 const { navigation, footer } = UI_TEXTS;
 
 interface Props {
@@ -76,10 +76,19 @@ const Navbar = (props: Props) => {
               mr: 4,
               display: { xs: "none", md: "flex" },
               alignItems: "center",
-              height: "64px", // Ajusta esto según la altura de tu barra de navegación
+              height: "64px",
             }}
           >
-            <PralambLogo2 width={150} height={40} />
+            <Box
+              component="img"
+              src={logo}
+              alt="Pralamb Logo"
+              sx={{
+                height: 150,
+                width: 'auto',
+                maxWidth: 150,
+              }}
+            />
           </Box>
 
           {/* Mobile Menu */}
@@ -142,7 +151,6 @@ const Navbar = (props: Props) => {
           </Box>
 
           {/* Logo - Mobile */}
-
           <Box
             component={RouterLink}
             to="/"
@@ -150,10 +158,19 @@ const Navbar = (props: Props) => {
               mr: 4,
               display: { xs: "flex", md: "none" },
               alignItems: "center",
-              height: "64px", // Ajusta esto según la altura de tu barra de navegación
+              height: "64px",
             }}
           >
-            <PralambLogo2 width={100} height={30} />
+            <Box
+              component="img"
+              src={logo}
+              alt="Pralamb Logo"
+              sx={{
+                height: 100,
+                width: 'auto',
+                maxWidth: 100,
+              }}
+            />
           </Box>
 
           {/* Desktop Menu */}

@@ -2,6 +2,7 @@ import { Box, Container, useTheme } from "@mui/material";
 import ServiceHeader from "../components/services/ServiceHeader";
 import ServiceGrid from "../components/services/ServiceGrid";
 import ServiceCTA from "../components/services/ServiceCTA";
+import OtherServices from "../components/services/OtherServices";
 import { motion } from "framer-motion";
 
 const Services = () => {
@@ -95,6 +96,9 @@ const Services = () => {
         <ServiceGrid />
         <ServiceCTA />
       </Container>
+      
+      {/* Otros Servicios - sección independiente */}
+      <OtherServices />
     </Box>
   );
 };

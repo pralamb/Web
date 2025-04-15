@@ -18,8 +18,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import PralambLogo2 from "../logo/Logo2";
-
+import logo from "../../assets/logo.webp";
 const { footer } = UI_TEXTS;
 
 const Footer = () => {
@@ -56,13 +55,22 @@ const Footer = () => {
               component={RouterLink}
               to="/"
               sx={{
-                mr: 4,
-                display: { xs: "none", md: "flex" },
+                display: "flex",
                 alignItems: "center",
-                height: "64px", // Ajusta esto según la altura de tu barra de navegación
+                height: "64px",
+                mb: 3
               }}
             >
-              <PralambLogo2 width={150} height={40} />
+              <Box
+                component="img"
+                src={logo}
+                alt="Pralamb Logo"
+                sx={{
+                  height: 150,
+                  width: 'auto',
+                  maxWidth: 150,
+                }}
+              />
             </Box>
 
             <Typography
