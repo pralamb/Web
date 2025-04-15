@@ -22,19 +22,19 @@ const otherServices = [
   {
     id: "interdisciplinary",
     title: "Articulación Interdisciplinaria",
-    description: "Contamos con una amplia red de profesionales especializados en distintas áreas ambientales que permiten abordar proyectos complejos desde múltiples perspectivas. Facilitamos la colaboración entre expertos para ofrecer soluciones integrales adaptadas a las necesidades específicas de cada cliente.",
+    description: "Contamos con una amplia red de profesionales especializados en distintas áreas ambientales que permiten abordar proyectos complejos desde múltiples perspectivas.",
     icon: <LayersIcon fontSize="large" />,
   },
   {
     id: "projects",
     title: "Gestión de Proyectos Ambientales",
-    description: "Ofrecemos un servicio completo de gestión de proyectos ambientales que abarca desde la fase inicial de planificación y diseño, hasta la implementación, monitoreo y evaluación de resultados. Nuestro enfoque metodológico garantiza la eficiencia y el cumplimiento de objetivos en tiempo y forma.",
+    description: "Ofrecemos un servicio completo de gestión de proyectos ambientales que abarca desde la fase inicial de planificación y diseño, hasta la implementación, monitoreo y evaluación de resultados.",
     icon: <AssignmentIcon fontSize="large" />,
   },
   {
     id: "measurements",
     title: "Mediciones Ambientales",
-    description: "Realizamos mediciones técnicas especializadas de parámetros ambientales críticos incluyendo calidad del aire, niveles de ruido, análisis de vertimientos, monitoreo de emisiones atmosféricas, caracterización de suelos y evaluación de calidad de aguas superficiales y subterráneas. Utilizamos equipos certificados y metodologías acreditadas.",
+    description: "Realizamos mediciones técnicas especializadas de parámetros ambientales críticos incluyendo calidad del aire, niveles de ruido, análisis de vertimientos, monitoreo de emisiones atmosféricas, caracterización de suelos y evaluación de calidad de aguas superficiales y subterráneas.",
     icon: <SpeedIcon fontSize="large" />,
   },
 ];
@@ -51,8 +51,6 @@ const OtherServices = () => {
       ref={ref}
       sx={{
         py: { xs: 8, md: 12 },
-        background: "rgba(255, 255, 255, 0.02)",
-        backdropFilter: "blur(10px)",
         borderTop: "1px solid rgba(255, 255, 255, 0.05)",
         borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
         position: "relative",
@@ -183,6 +181,8 @@ const OtherServices = () => {
                     sx={{
                       color: theme.palette.text.secondary,
                       lineHeight: 1.7,
+                     textAlign:"justify"
+
                     }}
                   >
                     {service.description}

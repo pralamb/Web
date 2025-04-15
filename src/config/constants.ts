@@ -55,7 +55,7 @@ export const UI_TEXTS = {
           description: "Árboles plantados en proyectos de reforestación",
         },
         {
-          value: 25,
+          value: 5,
           suffix: "+",
           label: "Países",
           description: "Países donde hemos implementado soluciones",
@@ -318,7 +318,7 @@ export const SERVICES = [
     title: "Gestión Ambiental",
     description:
       "Implementación de Sistemas de Gestión Ambiental (SGA), herramientas de gestión y auditoría interna.",
-    image: "https://images.pexels.com/photos/5426403/pexels-photo-5426403.jpeg",
+    image: "https://media.istockphoto.com/id/688582490/photo/hand-with-green-sprout-over-earth-globe-over.jpg?s=2048x2048&w=is&k=20&c=0jrRwhrDlUyKnqLjS70p6_uIGCMESnCFx0otfm9ZWhU=",
     features: [
       "Sistemas de Gestión Ambiental",
       "Herramientas de gestión",

@@ -35,18 +35,7 @@ const ServiceCTA = () => {
         boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
       }}
     >
-      {/* Background Gradient */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main}1A, ${theme.palette.secondary.main}1A)`,
-          zIndex: -1,
-        }}
-      />
+
 
       {/* Animated Decorative Elements */}
       <Box

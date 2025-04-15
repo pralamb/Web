@@ -95,10 +95,8 @@ const Services = () => {
         <ServiceHeader />
         <ServiceGrid />
         <ServiceCTA />
+         <OtherServices />
       </Container>
-      
-      {/* Otros Servicios - sección independiente */}
-      <OtherServices />
     </Box>
   );
 };
