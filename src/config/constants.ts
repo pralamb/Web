@@ -243,8 +243,8 @@ export const UI_TEXTS = {
     contact: {
       title: "Contacto",
       address: {
-        street: "Calle Principal #123",
-        city: "Ciudad, País",
+        street: "Calle 195 No. 20 - 65",
+        city: "Bogotá, Colombia",
       },
       phone: "+57 321 4333801",
       email: "proyectos@pralamb.com",
@@ -269,9 +269,9 @@ export const COMPANY_INFO = {
   contact: {
     email: "proyectos@pralamb.com",
     phone: "+57 321 433380",
-    address: "Calle Principal 123, 28001 Madrid",
+    address: "Calle 195 No. 20 - 65",
     schedule: {
-      weekdays: "9:00 - 18:00",
+      weekdays: "8:00 - 17:00",
       saturday: "9:00 - 13:00",
     },
   },
