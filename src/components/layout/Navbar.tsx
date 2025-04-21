@@ -15,8 +15,6 @@ import {
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -232,8 +230,6 @@ const Navbar = (props: Props) => {
                 icon: <WhatsAppIcon />,
                 url: `https://wa.me/${footer.contact.phone.replace(/\D/g, "")}`,
               },
-              { icon: <FacebookIcon />, url: footer.social.facebook },
-              { icon: <TwitterIcon />, url: footer.social.twitter },
               { icon: <LinkedInIcon />, url: footer.social.linkedin },
               { icon: <InstagramIcon />, url: footer.social.instagram },
             ].map((social, index) => (

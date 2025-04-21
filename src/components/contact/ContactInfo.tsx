@@ -73,9 +73,6 @@ export default function ContactInfo() {
               <Typography variant="body2" color="text.secondary">
                 {info.schedule.weekdays}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {info.schedule.saturday}
-              </Typography>
             </Box>
           </Box>
         </Stack>

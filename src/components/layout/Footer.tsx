@@ -10,8 +10,6 @@ import {
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { UI_TEXTS, ROUTES } from "../../config/constants";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -92,8 +90,6 @@ const Footer = () => {
                     ""
                   )}`,
                 },
-                { icon: <FacebookIcon />, url: footer.social.facebook },
-                { icon: <TwitterIcon />, url: footer.social.twitter },
                 { icon: <LinkedInIcon />, url: footer.social.linkedin },
                 { icon: <InstagramIcon />, url: footer.social.instagram },
               ].map((social, index) => (

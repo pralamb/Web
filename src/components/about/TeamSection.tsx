@@ -12,7 +12,6 @@ import {
 import { motion } from "framer-motion";
 import { UI_TEXTS, TEAM_MEMBERS } from "../../config/constants";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
 
 const { team } = UI_TEXTS.sections.about;
@@ -128,19 +127,6 @@ export default function TeamSection() {
                       }}
                     >
                       <LinkedInIcon />
-                    </IconButton>
-                    <IconButton
-                      component="a"
-                      href={member.social.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      size="small"
-                      sx={{
-                        color: "text.secondary",
-                        "&:hover": { color: "#1DA1F2" },
-                      }}
-                    >
-                      <TwitterIcon />
                     </IconButton>
                     <IconButton
                       component="a"

@@ -186,8 +186,7 @@ export const UI_TEXTS = {
         title: "Información de contacto",
         schedule: {
           title: "Horario de atención:",
-          weekdays: "Lunes a Viernes: 9:00 - 18:00",
-          saturday: "Sábados: 9:00 - 13:00",
+          weekdays: "Lunes a Viernes: 8:00 - 17:00",
         },
       },
       form: {
@@ -250,8 +249,6 @@ export const UI_TEXTS = {
       email: "proyectos@pralamb.com",
     },
     social: {
-      facebook: "https://facebook.com/PRALAMB",
-      twitter: "https://twitter.com/PRALAMB",
       linkedin: "https://www.linkedin.com/in/daniela-prada-mu%C3%B1oz-consultoria-ambiental/",
       instagram: "https://instagram.com/PRALAMB",
     },
@@ -272,13 +269,10 @@ export const COMPANY_INFO = {
     address: "Calle 195 No. 20 - 65",
     schedule: {
       weekdays: "8:00 - 17:00",
-      saturday: "9:00 - 13:00",
     },
   },
   social: {
     linkedin: "https://linkedin.com/company/pralamb",
-    twitter: "https://twitter.com/pralamb",
-    facebook: "https://facebook.com/pralamb",
   },
 };
 
@@ -398,7 +392,6 @@ export const TEAM_MEMBERS = [
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
     social: {
       linkedin: "#",
-      twitter: "#",
       email: "ana@example.com",
     },
   },
@@ -410,7 +403,6 @@ export const TEAM_MEMBERS = [
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a",
     social: {
       linkedin: "#",
-      twitter: "#",
       email: "carlos@example.com",
     },
   },
@@ -422,7 +414,6 @@ export const TEAM_MEMBERS = [
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
     social: {
       linkedin: "#",
-      twitter: "#",
       email: "laura@example.com",
     },
   },
