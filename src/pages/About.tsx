@@ -31,9 +31,9 @@ const About = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage:
-            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
-          backgroundSize: "500px",
+          backgroundImage: "url('/images/fondo.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           opacity: 0.03,
           zIndex: -1,
         },

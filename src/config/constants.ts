@@ -7,7 +7,7 @@ export const ROUTES = {
 };
 
 export const IMAGES = {
-  hero: '/images/fondo.jpeg',
+  hero: "/images/fondo.jpeg",
   leafPattern: "/leaf-pattern.png",
 };
 
@@ -102,38 +102,41 @@ export const UI_TEXTS = {
       overline: "NUESTRA HISTORIA",
       history: {
         description:
-          "Desde nuestra fundación, hemos estado a la vanguardia de la consultoría ambiental, trabajando incansablemente para crear un futuro más sostenible. Nuestra trayectoria está marcada por el compromiso con la innovación y la excelencia en cada proyecto que emprendemos.",
+          "PRALAMB S.A.S. es una empresa colombiana de consultoría ambiental conformada por un equipo multidisciplinario de profesionales con más de 13 años de experiencia en el sector público y privado, especialmente en coordinación con autoridades ambientales, rurales y agropecuarias a nivel nacional y regional. Aunque somos una empresa de creación reciente, nuestra trayectoria individual nos respalda con un conocimiento sólido, técnico y estratégico en la gestión ambiental empresarial.",
         achievements: [
-          "Más de 100 proyectos de impacto ambiental completados con éxito",
-          "Reconocimiento internacional por nuestras prácticas sostenibles",
-          "Certificación ISO 14001 en Gestión Ambiental",
-          "Premio Nacional a la Innovación en Sostenibilidad 2023",
+          "Experiencia en sectores industrial, minero, agropecuario, empresarial y rural",
+          "Estructuración e implementación de Sistemas de Gestión Ambiental bajo ISO 14001:2015",
+          "Formulación de Estudios de Impacto Ambiental (EIA) para proyectos estratégicos",
+          "Diseño de programas de manejo de residuos, aguas y emisiones",
+          "Gestión exitosa de trámites ambientales ante autoridades competentes",
+          "Acceso de empresas a incentivos tributarios por inversiones ambientales",
+          "Promoción de buenas prácticas en sostenibilidad y cambio climático",
         ],
       },
       values: {
         overline: "NUESTROS VALORES",
         title: "Lo que nos Define",
         description:
-          "Nuestros valores fundamentales guían cada acción y decisión que tomamos en nuestro compromiso con el medio ambiente.",
+          "En PRALAMB S.A.S. creemos en el poder de la consultoría con propósito, donde la técnica, la experiencia y la ética se integran para generar valor ambiental, social y económico.",
         items: [
           {
-            title: "Sostenibilidad",
+            title: "Experiencia Técnica",
             description:
-              "Promovemos prácticas que garantizan un futuro sostenible para las próximas generaciones.",
+              "Más de 13 años de experiencia en gestión ambiental pública y privada.",
             iconColor: "#4CAF50",
             gradientColors: ["#4CAF50", "#496cb3"],
           },
           {
-            title: "Innovación",
+            title: "Compromiso con la Sostenibilidad",
             description:
-              "Buscamos constantemente nuevas soluciones para los desafíos ambientales actuales.",
+              "Desarrollamos soluciones que garantizan la sostenibilidad y optimización de recursos.",
             iconColor: "#2196F3",
             gradientColors: ["#2196F3", "#496cb3"],
           },
           {
-            title: "Responsabilidad",
+            title: "Ética Profesional",
             description:
-              "Asumimos el compromiso de proteger y preservar nuestro entorno natural.",
+              "Nuestras acciones se basan en la transparencia y el compromiso con nuestros clientes.",
             iconColor: "#496cb3",
             gradientColors: ["#8BC34A", "#496cb3"],
           },
@@ -249,14 +252,13 @@ export const UI_TEXTS = {
       email: "proyectos@pralamb.com",
     },
     social: {
-      linkedin: "https://www.linkedin.com/in/daniela-prada-mu%C3%B1oz-consultoria-ambiental/",
+      linkedin:
+        "https://www.linkedin.com/in/daniela-prada-mu%C3%B1oz-consultoria-ambiental/",
       instagram: "https://instagram.com/PRALAMB",
     },
     copyright: "© {year} PRALAMB. Todos los derechos reservados.",
   },
 };
-
-
 
 export const COMPANY_INFO = {
   name: "Pralamb",
@@ -282,7 +284,8 @@ export const SERVICES = [
     title: "Gestión Ambiental",
     description:
       "Implementación de Sistemas de Gestión Ambiental (SGA), herramientas de gestión y auditoría interna.",
-    image: "https://media.istockphoto.com/id/688582490/photo/hand-with-green-sprout-over-earth-globe-over.jpg?s=2048x2048&w=is&k=20&c=0jrRwhrDlUyKnqLjS70p6_uIGCMESnCFx0otfm9ZWhU=",
+    image:
+      "https://media.istockphoto.com/id/688582490/photo/hand-with-green-sprout-over-earth-globe-over.jpg?s=2048x2048&w=is&k=20&c=0jrRwhrDlUyKnqLjS70p6_uIGCMESnCFx0otfm9ZWhU=",
     features: [
       "Sistemas de Gestión Ambiental",
       "Herramientas de gestión",
@@ -308,7 +311,8 @@ export const SERVICES = [
     title: "Instrumentos Ambientales",
     description:
       "Desarrollo e implementación de instrumentos como EIA, PMA, PUEAA, PGRV y otros requeridos por la normatividad.",
-    image: "https://media.istockphoto.com/id/1439233527/photo/light-bulb-on-green-background-ecological-technology-save-earth-concept.jpg?s=2048x2048&w=is&k=20&c=f-TOyGjPFE06wPfJrkFLjoHwzfBfhoa441y-dqPL4CI=",
+    image:
+      "https://media.istockphoto.com/id/1439233527/photo/light-bulb-on-green-background-ecological-technology-save-earth-concept.jpg?s=2048x2048&w=is&k=20&c=f-TOyGjPFE06wPfJrkFLjoHwzfBfhoa441y-dqPL4CI=",
     features: [
       "Estudios de Impacto Ambiental (EIA)",
       "Planes de Manejo Ambiental (PMA)",
