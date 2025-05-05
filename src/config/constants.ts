@@ -285,8 +285,7 @@ export const SERVICES = [
     title: "Gestión Ambiental Integral",
     description:
       "Implementación de Sistemas de Gestión Ambiental (SGA ISO 14001), herramientas de gestión y auditoría interna.",
-    image:
-      "https://media.istockphoto.com/id/688582490/photo/hand-with-green-sprout-over-earth-globe-over.jpg?s=2048x2048&w=is&k=20&c=0jrRwhrDlUyKnqLjS70p6_uIGCMESnCFx0otfm9ZWhU=",
+    image: "/services/services1.jpg",
     features: [
       "Sistemas de Gestión Ambiental ISO 14001:2015",
       "Herramientas de gestión",
@@ -299,7 +298,7 @@ export const SERVICES = [
     title: "Gestión de Residuos",
     description:
       "Planes de Gestión Integral de Residuos Sólidos (PGIRS), RESPEL, RCDs, aprovechables y gestión de envases/empaques.",
-    image: "https://images.pexels.com/photos/2682462/pexels-photo-2682462.jpeg",
+    image: "/services/services2.jpeg",
     features: [
       "Planes de Gestión Integral (PGIRS)",
       "Residuos peligrosos (RESPEL)",
@@ -312,8 +311,7 @@ export const SERVICES = [
     title: "Instrumentos Ambientales",
     description:
       "Desarrollo e implementación de instrumentos como EIA, PMA, PUEAA, PGRV y otros requeridos por la normatividad.",
-    image:
-      "https://media.istockphoto.com/id/1439233527/photo/light-bulb-on-green-background-ecological-technology-save-earth-concept.jpg?s=2048x2048&w=is&k=20&c=f-TOyGjPFE06wPfJrkFLjoHwzfBfhoa441y-dqPL4CI=",
+    image: "/services/services3.jpg",
     features: [
       "Estudios de Impacto Ambiental (EIA)",
       "Planes de Manejo Ambiental (PMA)",
@@ -326,7 +324,7 @@ export const SERVICES = [
     title: "Gestión de Sustancias Químicas",
     description:
       "Consolidación y gestión de sustancias químicas, implementación del Sistema Globalmente Armonizado (SGA).",
-    image: "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg",
+    image: "/services/services4.jpeg",
     features: [
       "Inventario y gestión de sustancias químicas",
       "Implementación del SGA",
@@ -339,7 +337,7 @@ export const SERVICES = [
     title: "Trámites Ambientales",
     description:
       "Preparación de documentos para permisos, concesiones y registros ante autoridades ambientales.",
-    image: "https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg",
+    image: "/services/services5.jpeg",
     features: [
       "Documentación para permisos ambientales",
       "Gestión de concesiones",
@@ -352,7 +350,7 @@ export const SERVICES = [
     title: "Instrumentos Tributarios",
     description:
       "Aplicación de beneficios tributarios (IVA, Renta) relacionados con inversiones y proyectos ambientales.",
-    image: "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg",
+    image: "/services/services6.jpeg",
     features: [
       "Beneficios tributarios en IVA",
       "Beneficios tributarios en Renta",
@@ -365,7 +363,7 @@ export const SERVICES = [
     title: "Reportes Ambientales",
     description:
       "Elaboración y presentación de Informes de Cumplimiento Ambiental (ICA), RUA, RESPEL, PCB's, entre otros.",
-    image: "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
+    image: "/services/services7.jpeg",
     features: [
       "Informes de Cumplimiento Ambiental (ICA)",
       "Registro Único Ambiental (RUA)",
@@ -378,7 +376,7 @@ export const SERVICES = [
     title: "Proceso Sancionatorio",
     description:
       "Revisión de requerimientos, elaboración de respuestas, documentación de evidencias y planes de acción.",
-    image: "https://images.pexels.com/photos/5668481/pexels-photo-5668481.jpeg",
+    image: "/services/services8.jpeg",
     features: [
       "Revisión de requerimientos legales",
       "Elaboración de respuestas",
@@ -391,7 +389,7 @@ export const SERVICES = [
     title: "Gestión de Información Geográfica",
     description:
       "Gestión y análisis de información geográfica utilizando PostGIS, GeoServer y estructura ANLA, incluyendo elaboración de productos cartográficos y análisis espacial.",
-    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg",
+    image: "/services/services9.jpeg",
     features: [
       "Análisis con PostGIS y GeoServer",
       "Estructura ANLA",
@@ -404,7 +402,7 @@ export const SERVICES = [
     title: "Gestión de Propiedad Rural",
     description:
       "Estudios de títulos, procesos de restitución y regularización de propiedad rural, incluyendo acompañamiento técnico en justicia transicional y derecho de tierras.",
-    image: "https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg",
+    image: "/services/services10.jpeg",
     features: [
       "Estudios de títulos",
       "Procesos de restitución",
