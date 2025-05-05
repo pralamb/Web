@@ -4,6 +4,7 @@ export const ROUTES = {
   SERVICES: "/services",
   BLOG: "/blog",
   CONTACT: "/contact",
+  BLOG_POST: "/blog/:id",
 };
 
 export const IMAGES = {
@@ -441,7 +442,7 @@ export const TEAM_MEMBERS = [
     position: "Especialista en Impacto Ambiental",
     description:
       "Dedicada a la evaluación y mitigación de impactos ambientales en proyectos de gran escala.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
+    image: "/blog/autor.png",
     social: {
       linkedin: "#",
       email: "laura@example.com",
@@ -471,40 +472,160 @@ export const COMPANY_VALUES = [
 export const BLOG_POSTS = [
   {
     id: 1,
-    title: "Innovaciones en el Tratamiento de Aguas Residuales",
+    title: "Economía Circular: De la Teoría a la Acción Empresarial Sostenible",
     excerpt:
-      "Descubre las últimas tecnologías y métodos para el tratamiento eficiente de aguas residuales industriales.",
-    image:
-      "https://images.pexels.com/photos/15702931/pexels-photo-15702931/free-photo-of-hot-springs-and-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    category: "Tratamiento de Aguas",
-    date: "2024-02-20",
+      "¿Qué pasaría si los residuos dejaran de existir? La economía circular propone un modelo productivo donde los materiales se reutilizan, regeneran o revalorizan.",
+    content: `¿Qué pasaría si los residuos dejaran de existir?
+La economía circular propone un modelo productivo donde los materiales se reutilizan, regeneran o revalorizan, reduciendo el desperdicio y maximizando la eficiencia. No se trata solo de reciclar: es rediseñar procesos, productos y servicios con un enfoque regenerativo.
+
+🔄 ¿Qué puede hacer tu empresa?
+Adoptar la economía circular implica un cambio de mentalidad. Desde rediseñar empaques sostenibles hasta implementar logística inversa, pasando por la valorización de subproductos industriales. No es solo una obligación ambiental, ¡es una estrategia competitiva!
+
+🌱 Ventajas concretas:
+• Reducción de costos de materia prima y disposición final.
+• Cumplimiento normativo y posicionamiento de marca sostenible.
+• Acceso a incentivos y nuevos mercados verdes.
+
+En PRALAMB SAS, acompañamos a las empresas en la implementación de modelos circulares reales, medibles y alineados con su contexto operativo y regulatorio.
+
+💬 ¿Tu empresa ya está dando pasos hacia la circularidad? Conversemos.
+
+Referencias:
+• DNP. (2022). Estrategia Nacional de Economía Circular - ENEC.`,
+    image: "/src/assets/blog/economia-circular.jpg",
+    category: "Economía Circular",
+    date: "2024-05-04",
+    author: {
+      name: "Daniel Prada",
+      role: "Consultora Ambiental",
+      avatar: "/blog/autor.png",
+    },
+    readingTime: "4 min",
+    tags: [
+      "Economía Circular",
+      "Sostenibilidad",
+      "Gestión de Residuos",
+      "Innovación",
+    ],
   },
   {
     id: 2,
-    title: "Economía Circular en la Gestión de Residuos",
+    title:
+      "ISO 14001:2026 ¿Estás Listo para el Cambio en los Sistemas de Gestión Ambiental?",
     excerpt:
-      "Cómo implementar principios de economía circular para optimizar la gestión de residuos empresariales.",
-    image: "https://images.pexels.com/photos/2682462/pexels-photo-2682462.jpeg",
-    category: "Gestión de Residuos",
-    date: "2024-02-15",
+      "La ISO 14001:2015, referente internacional para la gestión ambiental, se encuentra en proceso de actualización. Conoce los nuevos cambios que llegarán con la versión 2026.",
+    content: `La ISO 14001:2015, referente internacional para la gestión ambiental, se encuentra en proceso de actualización. La nueva versión ISO 14001:2026 ya está en etapa de borrador y se espera su publicación oficial dentro del próximo año.
+
+📈 ¿Qué trae de nuevo esta actualización?
+• Enfoque más profundo en resiliencia climática.
+• Integración de economía circular en los sistemas de gestión.
+• Inclusión de digitalización ambiental y análisis del ciclo de vida ampliado.
+
+🔍 ¿Por qué es relevante para tu empresa?
+El contexto normativo está cambiando rápidamente y las organizaciones que se preparen desde ya tendrán una ventaja competitiva clara. El nuevo enfoque busca alinear la gestión ambiental con los retos globales del cambio climático y la sostenibilidad.
+
+En PRALAMB SAS, realizamos diagnósticos de brechas, actualizamos la documentación del SGA y formamos a tus equipos para afrontar los nuevos requisitos con solidez.
+
+📢 ¡Es el momento de anticiparse al cambio!
+
+Referencias:
+• ICONTEC. (2024). Revisión proyectada ISO 14001:2026 – Avances y contexto.`,
+    image: "/src/assets/blog/iso-14001.jpg",
+    category: "Gestión Ambiental",
+    date: "2024-05-03",
+    author: {
+      name: "Daniel Prada",
+      role: "Consultora Ambiental",
+      avatar: "/blog/autor.png",
+    },
+    readingTime: "5 min",
+    tags: [
+      "ISO 14001",
+      "Gestión Ambiental",
+      "Certificaciones",
+      "Actualización",
+    ],
   },
   {
     id: 3,
-    title: "Certificaciones Ambientales para Empresas",
+    title:
+      "Parques Ecoindustriales: La Nueva Frontera de la Sostenibilidad Empresarial",
     excerpt:
-      "Guía completa sobre las principales certificaciones ambientales y sus beneficios para tu empresa.",
-    image: "https://images.pexels.com/photos/5324947/pexels-photo-5324947.jpeg",
-    category: "Gestión Ambiental",
-    date: "2024-02-10",
+      "Descubre cómo la NTC 6720:2023 establece los lineamientos para el desarrollo de parques ecoindustriales en Colombia.",
+    content: `¿Sabías que Colombia ya cuenta con una norma técnica que establece los lineamientos para el desarrollo de parques ecoindustriales?
+
+La NTC 6720:2023 plantea criterios claros para planear, implementar y certificar espacios industriales sostenibles donde las empresas colaboran para compartir recursos, minimizar residuos y generar impacto colectivo positivo.
+
+🏭 ¿Qué es un Parque Ecoindustrial?
+Un entorno planificado donde múltiples empresas cooperan para optimizar el uso de recursos, energía, agua y materiales, generando sinergias productivas, sociales y ambientales.
+
+🔧 Beneficios clave:
+• Mayor eficiencia energética e hídrica.
+• Reducción de costos operativos.
+• Mejor reputación corporativa y acceso a incentivos gubernamentales.
+
+En PRALAMB SAS, acompañamos procesos de transición hacia modelos ecoindustriales, desde el diagnóstico de oportunidades hasta el desarrollo de estrategias de sinergia y reportes de desempeño ambiental.
+
+🌍 La sostenibilidad no se construye sola. Se crea en red.
+
+Referencias:
+• ICONTEC. (2023). NTC 6720: Requisitos para el establecimiento de Parques Ecoindustriales.
+• UNIDO. (2021). International Framework for Eco-Industrial Parks.`,
+    image: "/src/assets/blog/parques-ecoindustriales.jpg",
+    category: "Desarrollo Sostenible",
+    date: "2024-05-02",
+    author: {
+      name: "Daniel Prada",
+      role: "Consultora Ambiental",
+      avatar: "/blog/autor.png",
+    },
+    readingTime: "6 min",
+    tags: [
+      "Parques Ecoindustriales",
+      "Sostenibilidad",
+      "NTC 6720",
+      "Innovación Industrial",
+    ],
   },
   {
     id: 4,
-    title: "Energías Renovables en la Industria",
+    title:
+      "Gestión del Recurso Hídrico: Deber Ambiental y Prioridad Estratégica",
     excerpt:
-      "Análisis de las diferentes opciones de energías renovables y su implementación en el sector industrial.",
-    image: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg",
-    category: "Eficiencia Energética",
-    date: "2024-02-05",
+      "El agua es un bien estratégico y su gestión una responsabilidad compartida. Conoce las nuevas prioridades y exigencias en la gestión del recurso hídrico.",
+    content: `💧El agua es un bien estratégico. Y su gestión, una responsabilidad compartida entre el Estado, la ciudadanía y, por supuesto, el sector empresarial.
+
+En Colombia, proyectos como el Plan Nacional para el Manejo Integral del Recurso Hídrico, las Soluciones Basadas en la Naturaleza (SBN) y los nuevos planes de ordenamiento del recurso hídrico (PORH) están transformando el panorama.
+
+📍 A nivel distrital y nacional se prioriza:
+• La protección de fuentes hídricas.
+• La implementación de tecnologías limpias.
+• El monitoreo eficiente del uso y calidad del agua.
+• El control a vertimientos y aprovechamientos ineficientes.
+
+🚨 Para las empresas esto significa:
+• Mayores exigencias normativas.
+• Necesidad de fortalecer sus planes de uso eficiente y ahorro del agua (PUEAA).
+• Oportunidades de inversión en infraestructura verde y circularidad del recurso.
+
+Desde PRALAMB SAS, ayudamos a las empresas a diseñar, ajustar y optimizar sus estrategias hídricas, alineadas con los nuevos marcos regulatorios y de sostenibilidad.
+
+💡 Gestionar el agua hoy es asegurar el futuro del negocio.
+
+Referencias:
+• MinAmbiente. (2023). Plan Nacional para el Manejo del Recurso Hídrico.
+• CAR Cundinamarca. (2024). Lineamientos técnicos para planes de ordenamiento del recurso hídrico – PORH.
+• Banco Mundial. (2022). Gestión integrada del recurso hídrico en América Latina.`,
+    image: "/src/assets/blog/gestion-hidrica.jpg",
+    category: "Gestión Hídrica",
+    date: "2024-05-01",
+    author: {
+      name: "Daniel Prada",
+      role: "Consultora Ambiental",
+      avatar: "/blog/autor.png",
+    },
+    readingTime: "7 min",
+    tags: ["Recurso Hídrico", "Sostenibilidad", "Gestión Ambiental", "PUEAA"],
   },
 ];
 

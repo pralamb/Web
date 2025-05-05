@@ -123,7 +123,7 @@ const BlogGrid = ({ filteredPosts }: BlogGridProps) => {
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
                 component={RouterLink}
-                to={`${ROUTES.BLOG}`}
+                to={`${ROUTES.BLOG}/${post.id}`}
                 sx={{
                   py: 1.5,
                   px: 4,

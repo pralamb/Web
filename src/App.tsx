@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -21,6 +22,7 @@ function App() {
         <Route path={ROUTES.ABOUT} element={<About />} />
         <Route path={ROUTES.SERVICES} element={<Services />} />
         <Route path={ROUTES.BLOG} element={<Blog />} />
+        <Route path={ROUTES.BLOG_POST} element={<BlogPost />} />
         <Route path={ROUTES.CONTACT} element={<Contact />} />
       </Routes>
       <Footer />
