@@ -101,7 +101,7 @@ const BlogPost = () => {
         <Box
           sx={{
             position: "relative",
-            height: "70vh",
+            height: "50vh", // Reducido de 70vh a 50vh
             width: "100%",
             overflow: "hidden",
           }}
@@ -218,6 +218,35 @@ const BlogPost = () => {
             <Divider sx={{ mb: 6, opacity: 0.1 }} />
 
             <Box sx={{ mb: 6 }}>
+              <Box
+                sx={{
+                  position: "relative",
+                  width: "40%", // Ancho reducido para que quepa al lado
+                  float: "right", // Flotamos la imagen a la derecha
+                  margin: "0 0 20px 20px", // Margen izquierdo y inferior para separar del texto
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+                }}
+              >
+                <Box
+                  component="img"
+                  src={post.image}
+                  alt={post.title}
+                  sx={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: "300px",
+                    objectFit: "cover",
+                    display: "block",
+                    transform: "scale(1)",
+                    transition: "transform 0.3s ease-in-out",
+                    "&:hover": {
+                      transform: "scale(1.02)",
+                    },
+                  }}
+                />
+              </Box>
               {contentParagraphs.map((paragraph, index) => (
                 <Typography
                   key={index}

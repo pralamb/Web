@@ -496,7 +496,7 @@ Referencias:
     category: "Economía Circular",
     date: "2024-05-04",
     author: {
-      name: "Daniel Prada",
+      name: "Daniela Prada",
       role: "Consultora Ambiental",
       avatar: "/blog/autor.png",
     },
@@ -534,7 +534,7 @@ Referencias:
     category: "Gestión Ambiental",
     date: "2024-05-03",
     author: {
-      name: "Daniel Prada",
+      name: "Daniela Prada",
       role: "Consultora Ambiental",
       avatar: "/blog/autor.png",
     },
@@ -575,7 +575,7 @@ Referencias:
     category: "Desarrollo Sostenible",
     date: "2024-05-02",
     author: {
-      name: "Daniel Prada",
+      name: "Daniela Prada",
       role: "Consultora Ambiental",
       avatar: "/blog/autor.png",
     },
@@ -620,7 +620,7 @@ Referencias:
     category: "Gestión Hídrica",
     date: "2024-05-01",
     author: {
-      name: "Daniel Prada",
+      name: "Daniela Prada",
       role: "Consultora Ambiental",
       avatar: "/blog/autor.png",
     },
