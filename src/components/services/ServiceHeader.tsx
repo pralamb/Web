@@ -61,75 +61,80 @@ const ServiceHeader = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Ofrecemos soluciones profesionales para la gestión ambiental empresarial, cumplimiento normativo y asesoría en todos los aspectos relacionados con la sostenibilidad de su organización.
+        Ofrecemos soluciones profesionales para la gestión ambiental empresarial
+        con más de 13 años de experiencia. Nuestro equipo multidisciplinario
+        brinda servicios especializados en coordinación con autoridades
+        ambientales, rurales y agropecuarias a nivel nacional y regional,
+        garantizando el cumplimiento normativo y la optimización de recursos
+        desde una visión ambiental moderna.
       </Typography>
-      
-      <Stack 
-        direction="row" 
-        spacing={1} 
-        justifyContent="center" 
+
+      <Stack
+        direction="row"
+        spacing={1}
+        justifyContent="center"
         flexWrap="wrap"
         sx={{ mb: 6 }}
       >
-        <Box 
+        <Box
           component={motion.div}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          sx={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            gap: 1, 
-            justifyContent: 'center' 
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 1,
+            justifyContent: "center",
           }}
         >
-          <Chip 
-            label="Sistemas SGA" 
-            sx={{ 
-              bgcolor: 'rgba(255,255,255,0.1)',
+          <Chip
+            label="Sistemas SGA"
+            sx={{
+              bgcolor: "rgba(255,255,255,0.1)",
               color: theme.palette.primary.light,
-              mb: 1
-            }} 
+              mb: 1,
+            }}
           />
-          <Chip 
-            label="Residuos" 
-            sx={{ 
-              bgcolor: 'rgba(255,255,255,0.1)',
+          <Chip
+            label="Residuos"
+            sx={{
+              bgcolor: "rgba(255,255,255,0.1)",
               color: theme.palette.primary.light,
-              mb: 1
-            }} 
+              mb: 1,
+            }}
           />
-          <Chip 
-            label="Instrumentos Ambientales" 
-            sx={{ 
-              bgcolor: 'rgba(255,255,255,0.1)',
+          <Chip
+            label="Instrumentos Ambientales"
+            sx={{
+              bgcolor: "rgba(255,255,255,0.1)",
               color: theme.palette.primary.light,
-              mb: 1
-            }} 
+              mb: 1,
+            }}
           />
-          <Chip 
-            label="Trámites" 
-            sx={{ 
-              bgcolor: 'rgba(255,255,255,0.1)',
+          <Chip
+            label="Trámites"
+            sx={{
+              bgcolor: "rgba(255,255,255,0.1)",
               color: theme.palette.primary.light,
-              mb: 1
-            }} 
+              mb: 1,
+            }}
           />
-          <Chip 
-            label="Reportes" 
-            sx={{ 
-              bgcolor: 'rgba(255,255,255,0.1)',
+          <Chip
+            label="Reportes"
+            sx={{
+              bgcolor: "rgba(255,255,255,0.1)",
               color: theme.palette.primary.light,
-              mb: 1
-            }} 
+              mb: 1,
+            }}
           />
-          <Chip 
-            label="Beneficios Tributarios" 
-            sx={{ 
-              bgcolor: 'rgba(255,255,255,0.1)',
+          <Chip
+            label="Beneficios Tributarios"
+            sx={{
+              bgcolor: "rgba(255,255,255,0.1)",
               color: theme.palette.primary.light,
-              mb: 1
-            }} 
+              mb: 1,
+            }}
           />
         </Box>
       </Stack>

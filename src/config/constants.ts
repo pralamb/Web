@@ -281,13 +281,13 @@ export const COMPANY_INFO = {
 export const SERVICES = [
   {
     id: "environmental-management",
-    title: "Gestión Ambiental",
+    title: "Gestión Ambiental Integral",
     description:
-      "Implementación de Sistemas de Gestión Ambiental (SGA), herramientas de gestión y auditoría interna.",
+      "Implementación de Sistemas de Gestión Ambiental (SGA ISO 14001), herramientas de gestión y auditoría interna.",
     image:
       "https://media.istockphoto.com/id/688582490/photo/hand-with-green-sprout-over-earth-globe-over.jpg?s=2048x2048&w=is&k=20&c=0jrRwhrDlUyKnqLjS70p6_uIGCMESnCFx0otfm9ZWhU=",
     features: [
-      "Sistemas de Gestión Ambiental",
+      "Sistemas de Gestión Ambiental ISO 14001:2015",
       "Herramientas de gestión",
       "Auditoría interna",
       "Cumplimiento normativo",
@@ -383,6 +383,32 @@ export const SERVICES = [
       "Elaboración de respuestas",
       "Documentación de evidencias",
       "Desarrollo de planes de acción",
+    ],
+  },
+  {
+    id: "gis-management",
+    title: "Gestión de Información Geográfica",
+    description:
+      "Gestión y análisis de información geográfica utilizando PostGIS, GeoServer y estructura ANLA, incluyendo elaboración de productos cartográficos y análisis espacial.",
+    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg",
+    features: [
+      "Análisis con PostGIS y GeoServer",
+      "Estructura ANLA",
+      "Productos cartográficos",
+      "Análisis espacial",
+    ],
+  },
+  {
+    id: "rural-property",
+    title: "Gestión de Propiedad Rural",
+    description:
+      "Estudios de títulos, procesos de restitución y regularización de propiedad rural, incluyendo acompañamiento técnico en justicia transicional y derecho de tierras.",
+    image: "https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg",
+    features: [
+      "Estudios de títulos",
+      "Procesos de restitución",
+      "Regularización de propiedad rural",
+      "Justicia transicional",
     ],
   },
 ];

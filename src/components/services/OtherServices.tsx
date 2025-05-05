@@ -22,19 +22,22 @@ const otherServices = [
   {
     id: "interdisciplinary",
     title: "Articulación Interdisciplinaria",
-    description: "Contamos con una amplia red de profesionales especializados en distintas áreas ambientales que permiten abordar proyectos complejos desde múltiples perspectivas.",
+    description:
+      "Contamos con una amplia red de profesionales especializados en distintas áreas ambientales que permiten abordar proyectos complejos desde múltiples perspectivas, especialmente en coordinación con autoridades ambientales, rurales y agropecuarias a nivel nacional y regional.",
     icon: <LayersIcon fontSize="large" />,
   },
   {
     id: "projects",
     title: "Gestión de Proyectos Ambientales",
-    description: "Ofrecemos un servicio completo de gestión de proyectos ambientales que abarca desde la fase inicial de planificación y diseño, hasta la implementación, monitoreo y evaluación de resultados.",
+    description:
+      "Ofrecemos un servicio completo de gestión de proyectos ambientales que abarca desde la fase inicial de planificación y diseño, hasta la implementación, monitoreo y evaluación de resultados, con especial énfasis en proyectos de sostenibilidad y cambio climático.",
     icon: <AssignmentIcon fontSize="large" />,
   },
   {
-    id: "measurements",
-    title: "Mediciones Ambientales",
-    description: "Realizamos mediciones técnicas especializadas de parámetros ambientales críticos incluyendo calidad del aire, niveles de ruido, análisis de vertimientos, monitoreo de emisiones atmosféricas, caracterización de suelos y evaluación de calidad de aguas superficiales y subterráneas.",
+    id: "eco-industrial",
+    title: "Parques Ecoindustriales",
+    description:
+      "Brindamos asesoría especializada en el desarrollo de parques ecoindustriales bajo la NTC 6720:2023, ayudando a las empresas a optimizar recursos, generar sinergias productivas y crear impacto colectivo positivo.",
     icon: <SpeedIcon fontSize="large" />,
   },
 ];
@@ -101,7 +104,7 @@ const OtherServices = () => {
           >
             Otros Servicios
           </Typography>
-          
+
           <Divider
             sx={{
               width: "80px",
@@ -181,8 +184,7 @@ const OtherServices = () => {
                     sx={{
                       color: theme.palette.text.secondary,
                       lineHeight: 1.7,
-                     textAlign:"justify"
-
+                      textAlign: "justify",
                     }}
                   >
                     {service.description}
@@ -197,4 +199,4 @@ const OtherServices = () => {
   );
 };
 
-export default OtherServices; 
+export default OtherServices;
