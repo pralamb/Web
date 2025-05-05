@@ -43,16 +43,6 @@ const BlogGrid = ({ filteredPosts }: BlogGridProps) => {
               boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
               overflow: "hidden",
               transition: "all 0.3s ease-in-out",
-              "&:hover": {
-                transform: "translateY(-10px)",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-                "& .card-media": {
-                  transform: "scale(1.1)",
-                },
-                "& .overlay": {
-                  opacity: 0.7,
-                },
-              },
             }}
           >
             <Box sx={{ position: "relative", paddingTop: "60%" }}>
