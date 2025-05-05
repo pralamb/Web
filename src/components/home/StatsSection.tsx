@@ -3,7 +3,37 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import CountUp from "react-countup";
 import { UI_TEXTS } from "../../config/constants";
 
-const stats = UI_TEXTS.sections.stats.items;
+const stats = [
+  {
+    value: 13,
+    suffix: "+",
+    label: "Años de Experiencia",
+    description:
+      "Nuestro equipo cuenta con más de una década de experiencia en consultoría ambiental",
+  },
+  {
+    value: 4,
+    suffix: "",
+    label: "Sectores Principales",
+    description:
+      "Experiencia en sectores industrial, minero, agropecuario y empresarial",
+  },
+  {
+    value: 7,
+    suffix: "",
+    label: "Servicios Especializados",
+    description:
+      "Desde gestión ambiental hasta sistemas ISO 14001 y análisis geográfico",
+  },
+  {
+    value: 100,
+    suffix: "%",
+    label: "Compromiso Ambiental",
+    description:
+      "Dedicados a generar valor ambiental, social y económico sostenible",
+  },
+];
+
 const MotionBox = motion.create(Box);
 
 interface StatItem {
