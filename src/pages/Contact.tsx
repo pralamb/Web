@@ -1,15 +1,20 @@
 import { Box, Container, useTheme } from "@mui/material";
-import { motion } from "framer-motion";
 import { UI_TEXTS } from "../config/constants";
 import ContactHeader from "../components/contact/ContactHeader";
 import ContactForm from "../components/contact/ContactForm";
 import ContactInfo from "../components/contact/ContactInfo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Alert, Snackbar, Grid } from "@mui/material";
 import { IMAGES } from "../config/constants";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const theme = useTheme();
+
+  useEffect(() => {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Reemplaza con tu Public Key de EmailJS
+  }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,22 +39,43 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData);
-    setSnackbar({
-      open: true,
-      message: UI_TEXTS.sections.contact.formSuccess,
-      severity: "success",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    });
+    try {
+      await emailjs.send(
+        "YOUR_SERVICE_ID", // Reemplaza con tu Service ID de EmailJS
+        "YOUR_TEMPLATE_ID", // Reemplaza con tu Template ID de EmailJS
+        {
+          to_email: "proyectos@pralamb.com",
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+        },
+        "YOUR_PUBLIC_KEY" // Reemplaza con tu Public Key de EmailJS
+      );
+
+      setSnackbar({
+        open: true,
+        message: UI_TEXTS.sections.contact.formSuccess,
+        severity: "success",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      });
+    } catch (error) {
+      setSnackbar({
+        open: true,
+        message: "Error al enviar el mensaje. Por favor, intente nuevamente.",
+        severity: "error",
+      });
+    }
   };
 
   const handleCloseSnackbar = () => {
@@ -88,56 +114,6 @@ const Contact = () => {
         },
       }}
     >
-      {/* Decorative Elements */}
-      <Box
-        component={motion.div}
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        sx={{
-          position: "fixed",
-          top: "10%",
-          right: "5%",
-          width: "300px",
-          height: "300px",
-          background: `radial-gradient(circle, ${theme.palette.primary.light}40 0%, transparent 70%)`,
-          borderRadius: "50%",
-          filter: "blur(60px)",
-          zIndex: -1,
-        }}
-      />
-
-      <Box
-        component={motion.div}
-        animate={{
-          y: [0, 20, 0],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-        sx={{
-          position: "fixed",
-          bottom: "20%",
-          left: "5%",
-          width: "250px",
-          height: "250px",
-          background: `radial-gradient(circle, ${theme.palette.secondary.main}40 0%, transparent 70%)`,
-          borderRadius: "50%",
-          filter: "blur(50px)",
-          zIndex: -1,
-        }}
-      />
-
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
         <ContactHeader />
         <Grid container spacing={4}>
