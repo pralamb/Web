@@ -23,14 +23,7 @@ const ServiceGrid = () => {
   return (
     <Grid container spacing={4} sx={{ mb: { xs: 8, md: 12 } }}>
       {SERVICES.map((service, index) => (
-        <Grid 
-          item 
-          xs={12} 
-          md={6} 
-          lg={4} 
-          key={service.id}
-          id={service.id}
-        >
+        <Grid item xs={12} md={6} lg={4} key={service.id} id={service.id}>
           <MotionCard
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,16 +39,6 @@ const ServiceGrid = () => {
               boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
               overflow: "hidden",
               transition: "all 0.3s ease-in-out",
-              "&:hover": {
-                transform: "translateY(-10px)",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-                "& .card-media": {
-                  transform: "scale(1.1)",
-                },
-                "& .overlay": {
-                  opacity: 0.7,
-                },
-              },
             }}
           >
             <Box sx={{ position: "relative", paddingTop: "55%" }}>

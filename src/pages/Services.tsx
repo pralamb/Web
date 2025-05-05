@@ -3,7 +3,7 @@ import ServiceHeader from "../components/services/ServiceHeader";
 import ServiceGrid from "../components/services/ServiceGrid";
 import ServiceCTA from "../components/services/ServiceCTA";
 import OtherServices from "../components/services/OtherServices";
-import { motion } from "framer-motion";
+import { IMAGES } from "../config/constants";
 
 const Services = () => {
   const theme = useTheme();
@@ -33,69 +33,18 @@ const Services = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage:
-            "url('https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg')",
+          backgroundImage: `url(${IMAGES.hero})`,
           backgroundSize: "500px",
           opacity: 0.03,
           zIndex: -1,
         },
       }}
     >
-      {/* Decorative Elements */}
-      <Box
-        component={motion.div}
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        sx={{
-          position: "fixed",
-          top: "10%",
-          right: "5%",
-          width: "300px",
-          height: "300px",
-          background: `radial-gradient(circle, ${theme.palette.primary.light}40 0%, transparent 70%)`,
-          borderRadius: "50%",
-          filter: "blur(60px)",
-          zIndex: -1,
-        }}
-      />
-
-      <Box
-        component={motion.div}
-        animate={{
-          y: [0, 20, 0],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-        sx={{
-          position: "fixed",
-          bottom: "20%",
-          left: "5%",
-          width: "250px",
-          height: "250px",
-          background: `radial-gradient(circle, ${theme.palette.secondary.main}40 0%, transparent 70%)`,
-          borderRadius: "50%",
-          filter: "blur(50px)",
-          zIndex: -1,
-        }}
-      />
-
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
         <ServiceHeader />
         <ServiceGrid />
         <ServiceCTA />
-         <OtherServices />
+        <OtherServices />
       </Container>
     </Box>
   );
