@@ -492,7 +492,7 @@ En PRALAMB SAS, acompañamos a las empresas en la implementación de modelos cir
 
 Referencias:
 • DNP. (2022). Estrategia Nacional de Economía Circular - ENEC.`,
-    image: "/src/assets/blog/economia-circular.jpg",
+    image: "/blog/economia-circular.jpg",
     category: "Economía Circular",
     date: "2024-05-04",
     author: {
@@ -530,7 +530,7 @@ En PRALAMB SAS, realizamos diagnósticos de brechas, actualizamos la documentaci
 
 Referencias:
 • ICONTEC. (2024). Revisión proyectada ISO 14001:2026 – Avances y contexto.`,
-    image: "/src/assets/blog/iso-14001.jpg",
+    image: "/blog/iso-14001.jpg",
     category: "Gestión Ambiental",
     date: "2024-05-03",
     author: {
@@ -571,7 +571,7 @@ En PRALAMB SAS, acompañamos procesos de transición hacia modelos ecoindustrial
 Referencias:
 • ICONTEC. (2023). NTC 6720: Requisitos para el establecimiento de Parques Ecoindustriales.
 • UNIDO. (2021). International Framework for Eco-Industrial Parks.`,
-    image: "/src/assets/blog/parques-ecoindustriales.jpg",
+    image: "/blog/parques-ecoindustriales.jpg",
     category: "Desarrollo Sostenible",
     date: "2024-05-02",
     author: {
@@ -616,7 +616,7 @@ Referencias:
 • MinAmbiente. (2023). Plan Nacional para el Manejo del Recurso Hídrico.
 • CAR Cundinamarca. (2024). Lineamientos técnicos para planes de ordenamiento del recurso hídrico – PORH.
 • Banco Mundial. (2022). Gestión integrada del recurso hídrico en América Latina.`,
-    image: "/src/assets/blog/gestion-hidrica.jpg",
+    image: "/blog/gestion-hidrica.jpg",
     category: "Gestión Hídrica",
     date: "2024-05-01",
     author: {
