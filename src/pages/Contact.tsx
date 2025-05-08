@@ -10,9 +10,10 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const theme = useTheme();
+  const PUBLIC_KEY = "lwFwAD2iVdVd1YRwo";
 
   useEffect(() => {
-    emailjs.init("lwFwAD2iVdVd1YRwo"); // Reemplaza con tu Public Key de EmailJS
+    emailjs.init(PUBLIC_KEY);
   }, []);
 
   const [formData, setFormData] = useState({
@@ -53,7 +54,7 @@ const Contact = () => {
           company: formData.company,
           message: formData.message,
         },
-        "YOUR_PUBLIC_KEY" // Reemplaza con tu Public Key de EmailJS
+        PUBLIC_KEY
       );
 
       setSnackbar({
