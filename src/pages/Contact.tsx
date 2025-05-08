@@ -12,7 +12,7 @@ const Contact = () => {
   const theme = useTheme();
 
   useEffect(() => {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Reemplaza con tu Public Key de EmailJS
+    emailjs.init("lwFwAD2iVdVd1YRwo"); // Reemplaza con tu Public Key de EmailJS
   }, []);
 
   const [formData, setFormData] = useState({
@@ -43,8 +43,8 @@ const Contact = () => {
     e.preventDefault();
     try {
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Reemplaza con tu Service ID de EmailJS
-        "YOUR_TEMPLATE_ID", // Reemplaza con tu Template ID de EmailJS
+        "service_bfvgtye", // Reemplaza con tu Service ID de EmailJS
+        "template_dtiz73d", // Reemplaza con tu Template ID de EmailJS
         {
           to_email: "proyectos@pralamb.com",
           from_name: formData.name,
